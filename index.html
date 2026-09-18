@@ -1,1236 +1,1604 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OBH Metales SAC | Ingeniería, Fabricación y Montaje de Estructuras Metálicas</title>
-    <meta name="description" content="Especialistas en estructuras metálicas, naves industriales, carpintería metálica, acero inoxidable, alquiler de andamios y servicio de montacargas en Perú.">
-    <meta name="keywords" content="OBH Metales, estructuras metalicas, naves industriales, carpinteria metalica, acero inoxidable, andamios, montacargas, soldadura, galpones">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Inter & Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind Custom Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#070F1E',      // Azul noche metálico ultra oscuro
-                            card: '#0D1B2A',      // Tarjetas oscuras
-                            navy: '#1B2A4A',      // Azul marino industrial
-                            blue: '#0052CC',      // Azul corporativo vibrante
-                            electric: '#0066FF',  // Azul eléctrico
-                            cyan: '#00F2FE',      // Cian metálico resplandeciente
-                            steel: '#415A77',     // Azul acero grisáceo
-                            silver: '#E0E1DD',    // Plateado claro
-                            bg: '#F4F7FA'         // Fondo de sección clara
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'glow-blue': '0 0 25px -5px rgba(0, 102, 255, 0.4)',
-                        'glow-cyan': '0 0 25px -5px rgba(0, 242, 254, 0.4)',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS Animations & Styles -->
-    <style>
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-        .animate-pulse-glow {
-            animation: pulseGlow 4s infinite ease-in-out;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBH Metales SAC | Estructuras Metálicas e Ingeniería</title>
+  <meta name="description" content="Especialistas en fabricación y montaje de estructuras metálicas, carpintería metálica, acero inoxidable, servicio de montacargas y alquiler/venta de andamios.">
+  
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .glass-panel {
-            background: rgba(13, 27, 42, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+  <style>
+    /* ==========================================================================
+       VARIABLES Y ESTILOS BASE
+       ========================================================================== */
+    :root {
+      --primary-dark: #071329;
+      --primary-blue: #0f3260;
+      --bright-blue: #1b63c6;
+      --cyan-accent: #00d2ff;
+      --yellow-steel: #ffaa00;
+      --bg-dark: #0b182e;
+      --bg-card: #12223f;
+      --text-main: #f0f4f8;
+      --text-muted: #94a3b8;
+      --white: #ffffff;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --transition: all 0.3s ease;
+    }
 
-        .glass-header {
-            background: rgba(7, 15, 30, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        .text-gradient {
-            background: linear-gradient(135deg, #00F2FE 0%, #4FACFE 50%, #FFFFFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--primary-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        .text-gradient-gold {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
 
-        /* Lightbox CSS */
-        #lightbox.active {
-            display: flex !important;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #070F1E;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1B2A4A;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #0052CC;
-        }
-    </style>
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ==========================================================================
+       HEADER & NAVEGACIÓN
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(7, 19, 41, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(27, 99, 198, 0.2);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 1.3rem;
+      letter-spacing: -0.5px;
+      color: var(--white);
+    }
+
+    .logo-img {
+      height: 52px;
+      width: auto;
+    }
+
+    .logo-text span {
+      color: var(--cyan-accent);
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--cyan-accent);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--cyan-accent);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-contact-header {
+      background: linear-gradient(135deg, var(--bright-blue), #0d47a1);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(27, 99, 198, 0.4);
+      transition: var(--transition);
+    }
+
+    .btn-contact-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+    }
+
+    /* Botón Hamburguesa Móvil */
+    .mobile-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--white);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding-top: 130px;
+      padding-bottom: 80px;
+      display: flex;
+      align-items: center;
+      background: radial-gradient(circle at 80% 20%, #123058 0%, var(--primary-dark) 70%);
+      overflow: hidden;
+    }
+
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 210, 255, 0.1);
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      color: var(--cyan-accent);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #ffffff 30%, var(--cyan-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+      max-width: 580px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--bright-blue), #0288d1);
+      color: var(--white);
+      padding: 15px 32px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: 0 8px 25px rgba(27, 99, 198, 0.4);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 210, 255, 0.6);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 15px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 1rem;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan-accent);
+      color: var(--cyan-accent);
+      background: rgba(0, 210, 255, 0.05);
+    }
+
+    /* Targeta de Cotización Express */
+    .hero-card-quote {
+      background: rgba(18, 34, 63, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      padding: 30px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card-quote h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-card-quote p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      background: rgba(7, 19, 41, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-sm);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--cyan-accent);
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+    }
+
+    /* ==========================================================================
+       ESTADÍSTICAS / MÉTRICAS
+       ========================================================================== */
+    .stats-section {
+      background: var(--bg-card);
+      border-y: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px 0;
+      margin-top: -30px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--cyan-accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================================================================
+       SECCIÓN GENERAL TITULOS
+       ========================================================================== */
+    .section-padding {
+      padding: 90px 0;
+    }
+
+    .section-title-wrapper {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .section-subtitle {
+      color: var(--cyan-accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       SERVICIOS
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: var(--radius-md);
+      padding: 35px 25px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0%;
+      background: var(--cyan-accent);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      border-color: rgba(0, 210, 255, 0.3);
+    }
+
+    .service-card:hover::before {
+      height: 100%;
+    }
+
+    .service-icon {
+      width: 65px;
+      height: 65px;
+      background: rgba(27, 99, 198, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--cyan-accent);
+      margin-bottom: 22px;
+    }
+
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .service-link {
+      color: var(--cyan-accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       NOSOTROS
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: 25px;
+      right: 25px;
+      background: rgba(7, 19, 41, 0.9);
+      border: 1px solid var(--cyan-accent);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .about-badge-icon {
+      font-size: 2rem;
+      color: var(--yellow-steel);
+    }
+
+    .about-feature-list {
+      list-style: none;
+      margin: 25px 0 35px;
+    }
+
+    .about-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .about-feature-item i {
+      color: var(--cyan-accent);
+      margin-top: 4px;
+    }
+
+    /* ==========================================================================
+       GALERÍA DE PROYECTOS / PORTAFOLIO
+       ========================================================================== */
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--bright-blue);
+      border-color: var(--bright-blue);
+      color: var(--white);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 280px;
+      cursor: pointer;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(7, 19, 41, 0.95) 0%, rgba(7, 19, 41, 0.2) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-category {
+      color: var(--cyan-accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .portfolio-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: var(--radius-sm);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      color: var(--white);
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       PREGUNTAS FRECUENTES (FAQ)
+       ========================================================================== */
+    .faq-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px 25px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .faq-question i {
+      transition: var(--transition);
+      color: var(--cyan-accent);
+    }
+
+    .faq-answer {
+      padding: 0 25px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 25px 20px;
+      max-height: 200px;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    /* ==========================================================================
+       CONTACTO & UBICACIÓN
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+    }
+
+    .contact-info-card {
+      background: var(--bg-card);
+      padding: 35px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(27, 99, 198, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan-accent);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-details h4 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-details p, .contact-details a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-details a:hover {
+      color: var(--cyan-accent);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      background: var(--bright-blue);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    footer {
+      background: #040c1a;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 60px 0 30px;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-col p {
+      color: var(--text-muted);
+      margin-top: 15px;
+      max-width: 350px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan-accent);
+      padding-left: 5px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 25px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       BOTÓN FLOTANTE WHATSAPP
+       ========================================================================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 62px;
+      height: 62px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 32px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #20ba5a;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE ADAPTACIONES (MÓVILES Y TABLETS)
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(7, 19, 41, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        transition: var(--transition);
+        padding: 40px 20px;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .nav-link {
+        font-size: 1.2rem;
+      }
+
+      .section-padding {
+        padding: 60px 0;
+      }
+
+      .hero {
+        padding-top: 110px;
+        padding-bottom: 50px;
+      }
+
+      .hero-card-quote {
+        padding: 20px;
+      }
+
+      .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
-<body class="bg-brand-bg text-slate-800 font-sans antialiased selection:bg-brand-electric selection:text-white overflow-x-hidden">
+<body>
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-50 glass-header border-b border-slate-800/80 transition-all duration-300" id="main-header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- BRAND LOGO SVG -->
-                <a href="#inicio" class="flex items-center gap-3 group">
-                    <div class="relative w-12 h-12 bg-gradient-to-br from-brand-blue to-brand-dark p-1.5 rounded-xl border border-brand-cyan/40 shadow-glow-blue transition-transform group-hover:scale-105">
-                        <!-- High Fidelity SVG Logo -->
-                        <svg class="w-full h-full text-brand-cyan" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Roof and Structural Beam -->
-                            <path d="M50 10 L90 38 L90 46 L50 18 L10 46 L10 38 Z" fill="currentColor"/>
-                            <path d="M15 42 L85 42 L85 48 L15 48 Z" fill="#FFFFFF"/>
-                            <!-- Building Pillars / Structure -->
-                            <rect x="20" y="48" width="16" height="38" rx="2" fill="#0052CC" stroke="#FFFFFF" stroke-width="2"/>
-                            <rect x="42" y="48" width="16" height="38" rx="2" fill="#0052CC" stroke="#FFFFFF" stroke-width="2"/>
-                            <rect x="64" y="48" width="16" height="38" rx="2" fill="#0052CC" stroke="#FFFFFF" stroke-width="2"/>
-                            <!-- Diagonal Bracing (Truss) -->
-                            <line x1="20" y1="48" x2="36" y2="86" stroke="#00F2FE" stroke-width="2"/>
-                            <line x1="42" y1="48" x2="58" y2="86" stroke="#00F2FE" stroke-width="2"/>
-                            <line x1="64" y1="48" x2="80" y2="86" stroke="#00F2FE" stroke-width="2"/>
-                            <path d="M5 90 L95 90 L95 96 L5 96 Z" fill="#FFFFFF"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-xl sm:text-2xl font-black font-display tracking-tight text-white leading-none">
-                            OBH <span class="text-brand-cyan">METALES</span>
-                        </span>
-                        <span class="text-[10px] tracking-[0.2em] font-semibold text-slate-400 uppercase mt-1">S.A.C. • ESTRUCTURAS & INGENIERÍA</span>
-                    </div>
-                </a>
-
-                <!-- DESKTOP NAV LINKS -->
-                <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wide">
-                    <a href="#inicio" class="text-slate-200 hover:text-brand-cyan transition-colors py-2 border-b-2 border-transparent hover:border-brand-cyan">Inicio</a>
-                    <a href="#nosotros" class="text-slate-200 hover:text-brand-cyan transition-colors py-2 border-b-2 border-transparent hover:border-brand-cyan">Nosotros</a>
-                    <a href="#servicios" class="text-slate-200 hover:text-brand-cyan transition-colors py-2 border-b-2 border-transparent hover:border-brand-cyan">Servicios</a>
-                    <a href="#galeria" class="text-slate-200 hover:text-brand-cyan transition-colors py-2 border-b-2 border-transparent hover:border-brand-cyan">Proyectos</a>
-                    <a href="#cotizador" class="text-slate-200 hover:text-brand-cyan transition-colors py-2 border-b-2 border-transparent hover:border-brand-cyan">Cotizador</a>
-                    <a href="#faq" class="text-slate-200 hover:text-brand-cyan transition-colors py-2 border-b-2 border-transparent hover:border-brand-cyan">Preguntas</a>
-                    <a href="#contacto" class="text-slate-200 hover:text-brand-cyan transition-colors py-2 border-b-2 border-transparent hover:border-brand-cyan">Contacto</a>
-                </nav>
-
-                <!-- HEADER ACTION BUTTON -->
-                <div class="hidden sm:flex items-center gap-4">
-                    <a href="https://wa.me/51901538435?text=Hola%20OBH%20Metales%20SAC,%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto." 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-emerald-900/30 hover:scale-105 transition-all">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>901 538 435</span>
-                    </a>
-                </div>
-
-                <!-- MOBILE MENU TOGGLE -->
-                <button id="mobile-menu-toggle" aria-label="Abrir Menú" class="lg:hidden p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 hover:text-brand-cyan focus:outline-none">
-                    <i class="fa-solid fa-bars-staggered text-2xl"></i>
-                </button>
-            </div>
+  <!-- HEADER / MENÚ -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <svg class="logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 10 L85 35 V85 H15 V35 Z" stroke="#00d2ff" stroke-width="6" fill="none"/>
+          <path d="M30 45 H70 V75 H30 Z" fill="#1b63c6"/>
+          <text x="50" y="66" font-family="Montserrat" font-weight="900" font-size="20" fill="#ffffff" text-anchor="middle">OBH</text>
+        </svg>
+        <div class="logo-text">
+          OBH METALES
+          <span>METALES SAC</span>
         </div>
+      </a>
 
-        <!-- MOBILE MENU DROPDOWN -->
-        <div id="mobile-dropdown" class="hidden lg:hidden bg-brand-dark/98 border-b border-slate-800 px-6 pt-4 pb-8 space-y-4 animate-fade-in">
-            <a href="#inicio" class="mobile-nav-link block text-lg font-medium text-slate-200 hover:text-brand-cyan py-2 border-b border-slate-800">Inicio</a>
-            <a href="#nosotros" class="mobile-nav-link block text-lg font-medium text-slate-200 hover:text-brand-cyan py-2 border-b border-slate-800">Nosotros</a>
-            <a href="#servicios" class="mobile-nav-link block text-lg font-medium text-slate-200 hover:text-brand-cyan py-2 border-b border-slate-800">Servicios Especializados</a>
-            <a href="#galeria" class="mobile-nav-link block text-lg font-medium text-slate-200 hover:text-brand-cyan py-2 border-b border-slate-800">Galería de Proyectos</a>
-            <a href="#cotizador" class="mobile-nav-link block text-lg font-medium text-slate-200 hover:text-brand-cyan py-2 border-b border-slate-800">Cotizador Express</a>
-            <a href="#faq" class="mobile-nav-link block text-lg font-medium text-slate-200 hover:text-brand-cyan py-2 border-b border-slate-800">Preguntas Frecuentes</a>
-            <a href="#contacto" class="mobile-nav-link block text-lg font-medium text-slate-200 hover:text-brand-cyan py-2 border-b border-slate-800">Contacto Directo</a>
-            
-            <a href="https://wa.me/51901538435?text=Hola%20OBH%20Metales%20SAC,%20deseo%20solicitar%20una%20cotizaci%C3%B3n." 
-               target="_blank" 
-               class="flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg mt-4">
-                <i class="fa-brands fa-whatsapp text-2xl"></i>
-                <span>Chatear por WhatsApp (901 538 435)</span>
-            </a>
-        </div>
-    </header>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
+        <i class="fas fa-bars"></i>
+      </button>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="relative bg-brand-dark text-white min-h-[90vh] flex items-center overflow-hidden py-16 lg:py-24">
-        <!-- Spark Canvas Overlay (Simulated Welding Sparks) -->
-        <canvas id="sparks-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-40"></canvas>
-
-        <!-- Glow Orbs Background -->
-        <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand-blue/30 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-cyan/20 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                
-                <!-- Left Hero Text Content -->
-                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                    
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 border border-brand-cyan/40 text-brand-cyan text-xs sm:text-sm font-semibold tracking-wide shadow-glow-cyan">
-                        <i class="fa-solid fa-fire-flame-curved text-amber-400"></i>
-                        <span>LOS MEJORES ESPECIALISTAS EN ESTRUCTURAS METÁLICAS</span>
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight leading-[1.15]">
-                        Ingeniería en Fabricación y <span class="text-gradient">Montaje de Estructuras</span> de Metal
-                    </h1>
-
-                    <p class="text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        En <strong class="text-white font-semibold">OBH METALES SAC</strong> convertimos tus planos e ideas en infraestructura industrial de máxima resistencia, seguridad estructural y acabados de alta precisión.
-                    </p>
-
-                    <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="https://wa.me/51901538435?text=Hola%20OBH%20Metales,%20quisiera%20solicitar%20una%20visita%20t%C3%A9cnica%20o%20cotizaci%C3%B3n." 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-blue to-brand-electric hover:from-blue-600 hover:to-blue-700 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-glow-blue hover:scale-105 transition-all">
-                            <i class="fa-brands fa-whatsapp text-2xl text-emerald-400"></i>
-                            <span>Cotizar Proyecto Ahora</span>
-                        </a>
-
-                        <a href="#galeria" class="inline-flex items-center justify-center gap-2 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-lg px-8 py-4 rounded-2xl transition-all hover:border-brand-cyan/50">
-                            <i class="fa-solid fa-helmet-safety text-brand-cyan"></i>
-                            <span>Ver Trabajos</span>
-                        </a>
-                    </div>
-
-                    <!-- Trust Badges -->
-                    <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-left">
-                        <div class="space-y-1">
-                            <div class="flex items-center gap-1.5 text-brand-cyan font-black text-2xl sm:text-3xl font-display">
-                                <i class="fa-solid fa-shield-check text-xl"></i>
-                                <span>100%</span>
-                            </div>
-                            <p class="text-xs text-slate-400 font-medium">Garantía en Estructuras</p>
-                        </div>
-
-                        <div class="space-y-1">
-                            <div class="flex items-center gap-1.5 text-brand-cyan font-black text-2xl sm:text-3xl font-display">
-                                <i class="fa-solid fa-truck-fast text-xl"></i>
-                                <span>Nacional</span>
-                            </div>
-                            <p class="text-xs text-slate-400 font-medium">Atención en todo Perú</p>
-                        </div>
-
-                        <div class="space-y-1">
-                            <div class="flex items-center gap-1.5 text-brand-cyan font-black text-2xl sm:text-3xl font-display">
-                                <i class="fa-solid fa-certificate text-xl"></i>
-                                <span>ISO / SAC</span>
-                            </div>
-                            <p class="text-xs text-slate-400 font-medium">Normas de Seguridad</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Right Hero Feature Card -->
-                <div class="lg:col-span-5">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <!-- Glow Backing -->
-                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-cyan via-brand-blue to-emerald-500 opacity-40 blur-xl animate-pulse-glow"></div>
-                        
-                        <!-- Main Dark Industrial Card -->
-                        <div class="relative bg-brand-card border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl space-y-6">
-                            
-                            <!-- Card Header -->
-                            <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="p-2 bg-brand-blue/20 rounded-lg text-brand-cyan">
-                                        <i class="fa-solid fa-industry text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-white text-base">OBH METALES S.A.C.</h3>
-                                        <p class="text-xs text-slate-400">RUC Registrado • Trabajos Garantizados</p>
-                                    </div>
-                                </div>
-                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/30">
-                                    ● En Línea
-                                </span>
-                            </div>
-
-                            <!-- List of Core Services in Hero -->
-                            <div class="space-y-3.5">
-                                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition-colors flex items-center gap-3.5">
-                                    <i class="fa-solid fa-warehouse text-brand-cyan text-lg w-6 text-center"></i>
-                                    <span class="text-sm font-semibold text-slate-200">Estructuras Metálicas y Techos</span>
-                                </div>
-
-                                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition-colors flex items-center gap-3.5">
-                                    <i class="fa-solid fa-door-closed text-brand-cyan text-lg w-6 text-center"></i>
-                                    <span class="text-sm font-semibold text-slate-200">Carpintería Metálica y Portones</span>
-                                </div>
-
-                                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition-colors flex items-center gap-3.5">
-                                    <i class="fa-solid fa-gem text-brand-cyan text-lg w-6 text-center"></i>
-                                    <span class="text-sm font-semibold text-slate-200">Trabajos Especiales en Acero Inoxidable</span>
-                                </div>
-
-                                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition-colors flex items-center gap-3.5">
-                                    <i class="fa-solid fa-truck-ramp-box text-brand-cyan text-lg w-6 text-center"></i>
-                                    <span class="text-sm font-semibold text-slate-200">Servicio de Montacargas con Operador</span>
-                                </div>
-
-                                <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-brand-cyan/40 transition-colors flex items-center gap-3.5">
-                                    <i class="fa-solid fa-cubes-stacked text-brand-cyan text-lg w-6 text-center"></i>
-                                    <span class="text-sm font-semibold text-slate-200">Alquiler y Venta de Andamios Normados</span>
-                                </div>
-                            </div>
-
-                            <!-- Fast Contact Box -->
-                            <div class="pt-2">
-                                <a href="https://wa.me/51901538435?text=Hola,%20quisiera%20solicitar%20un%20presupuesto%20directo." 
-                                   target="_blank" 
-                                   class="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-brand-cyan font-bold py-3 rounded-xl border border-brand-cyan/30 text-sm transition-all">
-                                    <i class="fa-solid fa-calculator"></i>
-                                    <span>Solicitar Presupuesto Exprés</span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- METRICS & COUNTERS SECTION -->
-    <section class="bg-brand-dark py-12 border-y border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                
-                <div class="space-y-2 p-4 rounded-2xl bg-slate-900/50 border border-slate-800/60">
-                    <p class="text-3xl sm:text-4xl font-black font-display text-brand-cyan counter" data-target="150">0</p>
-                    <p class="text-xs sm:text-sm text-slate-300 font-medium">Proyectos Ejecutados</p>
-                </div>
-
-                <div class="space-y-2 p-4 rounded-2xl bg-slate-900/50 border border-slate-800/60">
-                    <p class="text-3xl sm:text-4xl font-black font-display text-brand-cyan counter" data-target="100">0</p>
-                    <p class="text-xs sm:text-sm text-slate-300 font-medium">% Clientes Satisfechos</p>
-                </div>
-
-                <div class="space-y-2 p-4 rounded-2xl bg-slate-900/50 border border-slate-800/60">
-                    <p class="text-3xl sm:text-4xl font-black font-display text-brand-cyan counter" data-target="12">0</p>
-                    <p class="text-xs sm:text-sm text-slate-300 font-medium">Años de Experiencia</p>
-                </div>
-
-                <div class="space-y-2 p-4 rounded-2xl bg-slate-900/50 border border-slate-800/60">
-                    <p class="text-3xl sm:text-4xl font-black font-display text-emerald-400 counter" data-target="24">0</p>
-                    <p class="text-xs sm:text-sm text-slate-300 font-medium">Horas Respuesta WhatsApp</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT US SECTION -->
-    <section id="nosotros" class="py-24 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left Image Composition -->
-                <div class="lg:col-span-6 relative">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80" 
-                             alt="Estructuras Metálicas y Soldadura Especializada OBH" 
-                             class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-500">
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent flex items-end p-8">
-                            <div class="text-white space-y-1">
-                                <p class="font-bold text-lg font-display">Ingeniería & Calidad en Acero</p>
-                                <p class="text-xs text-slate-300">Monitoreo continuo de cada fase de fabricación y soldadura.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Badge -->
-                    <div class="absolute -bottom-6 -right-6 bg-brand-dark text-white p-6 rounded-2xl shadow-2xl border border-brand-cyan/30 hidden sm:block">
-                        <div class="flex items-center gap-4">
-                            <div class="p-3 bg-brand-blue rounded-xl text-brand-cyan">
-                                <i class="fa-solid fa-award text-3xl"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-base text-white">Seguridad Garantizada</p>
-                                <p class="text-xs text-slate-400">Personal Técnico Capacitado</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Text Content -->
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-brand-blue/10 text-brand-blue font-bold text-xs rounded-full uppercase tracking-wider">
-                        <i class="fa-solid fa-building-user"></i>
-                        <span>Sobre OBH Metales SAC</span>
-                    </div>
-
-                    <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 leading-tight">
-                        Especialistas en la Transformación del Acero con Soluciones de Alta Durabilidad
-                    </h2>
-
-                    <p class="text-slate-600 leading-relaxed text-base">
-                        En <strong class="text-slate-900">OBH METALES S.A.C.</strong> nos consolidamos como líderes en el sector metalmecánico e industrial en Perú. Nos dedicamos a la ingeniería, diseño, fabricación y montaje de todo tipo de estructuras de metal.
-                    </p>
-
-                    <p class="text-slate-600 leading-relaxed text-base">
-                        Garantizamos proyectos sólidos y seguros, cumpliendo estrictas normas técnicas de resistencia, cargas de peso y acabados estéticos de máxima exigencia para empresas, almacenes y residencias.
-                    </p>
-
-                    <!-- Feature List Grid -->
-                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-                            <div class="p-2 bg-brand-blue/10 text-brand-blue rounded-lg mt-1">
-                                <i class="fa-solid fa-microscope text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Control Técnico</h4>
-                                <p class="text-xs text-slate-500">Supervisión constante de cálculos y resistencia.</p>
-                            </div>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-                            <div class="p-2 bg-brand-blue/10 text-brand-blue rounded-lg mt-1">
-                                <i class="fa-solid fa-clock-fast text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Puntualidad de Entrega</h4>
-                                <p class="text-xs text-slate-500">Cumplimiento estricto de cronogramas.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-4">
-                        <a href="https://wa.me/51901538435?text=Deseo%20conocer%20m%C3%A1s%20sobre%20su%20empresa%20y%20proyectos." 
-                           target="_blank" 
-                           class="inline-flex items-center gap-3 bg-brand-navy hover:bg-slate-900 text-white font-bold px-6 py-3.5 rounded-xl shadow-md transition-all">
-                            <span>Hablar con un Asesor Técnico</span>
-                            <i class="fa-solid fa-arrow-right text-brand-cyan"></i>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION -->
-    <section id="servicios" class="py-24 bg-brand-bg relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="px-3.5 py-1.5 bg-brand-blue/10 text-brand-blue font-bold text-xs rounded-full uppercase tracking-wider">
-                    Soluciones Integrales
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900">Nuestros Servicios Especializados</h2>
-                <p class="text-slate-600 text-base">Cubrimos todas las necesidades de construcción metálica, montaje pesado y equipamiento industrial.</p>
-            </div>
-
-            <!-- Services Cards Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- SERVICE 1 -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all border border-slate-200/80 flex flex-col justify-between group hover:-translate-y-1">
-                    <div class="space-y-5">
-                        <div class="w-16 h-16 bg-gradient-to-br from-brand-navy to-brand-blue text-brand-cyan rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-warehouse"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold font-display text-slate-900 group-hover:text-brand-blue transition-colors">Estructuras Metálicas</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Diseño, fabricación, habilitado y armado de naves industriales, techos parabólicos, tijerales, reticulados, galpones y almacenes de gran escala.
-                        </p>
-                        <ul class="space-y-2 text-xs font-semibold text-slate-500 pt-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Techos Parabólicos y Dos Aguas</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Tijerales e Vigas H / IPE</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Coberturas e Coberturas TR4 / Termoacústicas</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/51901538435?text=Consulta%20Especializada%20en%20Estructuras%20Met%C3%A1licas" 
-                       target="_blank" 
-                       class="mt-8 inline-flex items-center justify-between w-full p-3.5 bg-slate-50 hover:bg-brand-blue hover:text-white rounded-xl text-brand-blue font-bold text-sm transition-all">
-                        <span>Cotizar Estructuras</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- SERVICE 2 -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all border border-slate-200/80 flex flex-col justify-between group hover:-translate-y-1">
-                    <div class="space-y-5">
-                        <div class="w-16 h-16 bg-gradient-to-br from-brand-navy to-brand-blue text-brand-cyan rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-hammer"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold font-display text-slate-900 group-hover:text-brand-blue transition-colors">Carpintería Metálica</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Fabricación a medida de portones industriales seccionales, puertas pesadas de fierro, escaleras de emergencia, barandas, rejas y cerramientos de seguridad.
-                        </p>
-                        <ul class="space-y-2 text-xs font-semibold text-slate-500 pt-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Escaleras de Caracol y Emergencia</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Portones Corredizos e Industriales</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Rejas y Cerramientos Perimétricos</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/51901538435?text=Consulta%20Especializada%20en%20Carpinter%C3%ADa%20Met%C3%A1lica" 
-                       target="_blank" 
-                       class="mt-8 inline-flex items-center justify-between w-full p-3.5 bg-slate-50 hover:bg-brand-blue hover:text-white rounded-xl text-brand-blue font-bold text-sm transition-all">
-                        <span>Cotizar Carpintería</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- SERVICE 3 -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all border border-slate-200/80 flex flex-col justify-between group hover:-translate-y-1">
-                    <div class="space-y-5">
-                        <div class="w-16 h-16 bg-gradient-to-br from-brand-navy to-brand-blue text-brand-cyan rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-gem"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold font-display text-slate-900 group-hover:text-brand-blue transition-colors">Trabajo en Inox</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Diseño y fabricación en Acero Inoxidable (Calidades 304 / 316) para la industria alimentaria, laboratorios, gastronomía y acabados arquitectónicos de lujo.
-                        </p>
-                        <ul class="space-y-2 text-xs font-semibold text-slate-500 pt-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Mesas y Tanques Sanitarios</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Barandas y Pasamanos Fino Inox</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Acabados Satinados y Brillantes</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/51901538435?text=Consulta%20Especializada%20en%20Trabajos%20en%20Acero%20Inoxidable" 
-                       target="_blank" 
-                       class="mt-8 inline-flex items-center justify-between w-full p-3.5 bg-slate-50 hover:bg-brand-blue hover:text-white rounded-xl text-brand-blue font-bold text-sm transition-all">
-                        <span>Cotizar Acero Inox</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- SERVICE 4 -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all border border-slate-200/80 flex flex-col justify-between group hover:-translate-y-1">
-                    <div class="space-y-5">
-                        <div class="w-16 h-16 bg-gradient-to-br from-brand-navy to-brand-blue text-brand-cyan rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-truck-ramp-box"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold font-display text-slate-900 group-hover:text-brand-blue transition-colors">Servicio de Montacargas</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Alquiler de unidades de montacargas y maniobras de izaje pesado. Operadores altamente experimentados para carga, descarga y posicionamiento de maquinaria.
-                        </p>
-                        <ul class="space-y-2 text-xs font-semibold text-slate-500 pt-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Maniobras de Izaje y Estructuras</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Operador Certificado Incluido</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Alquiler por Horas, Días o Meses</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/51901538435?text=Consulta%20Servicio%20de%20Montacargas%20y%20Maniobras" 
-                       target="_blank" 
-                       class="mt-8 inline-flex items-center justify-between w-full p-3.5 bg-slate-50 hover:bg-brand-blue hover:text-white rounded-xl text-brand-blue font-bold text-sm transition-all">
-                        <span>Alquilar Montacargas</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- SERVICE 5 -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all border border-slate-200/80 flex flex-col justify-between group hover:-translate-y-1 md:col-span-2 lg:col-span-2">
-                    <div class="space-y-5">
-                        <div class="w-16 h-16 bg-gradient-to-br from-brand-navy to-brand-blue text-brand-cyan rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-cubes-stacked"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold font-display text-slate-900 group-hover:text-brand-blue transition-colors">Alquiler y Venta de Andamios</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Provisión de andamios acoplables y normados para trabajos seguros en altura. Suministramos cuerpos completados con plataformas antideslizantes, barandas y garrochas para empresas de construcción e industrias.
-                        </p>
-                        <div class="grid sm:grid-cols-2 gap-3 text-xs font-semibold text-slate-500 pt-2">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Andamios Convencionales y Multidireccionales</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Plataformas de Metal y Coplas</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Despacho Directo a Obra</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-blue"></i> Inspección Técnica e Higiene</div>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/51901538435?text=Consulta%20Alquiler%20o%20Venta%20de%20Andamios" 
-                       target="_blank" 
-                       class="mt-8 inline-flex items-center justify-between w-full p-3.5 bg-slate-50 hover:bg-brand-blue hover:text-white rounded-xl text-brand-blue font-bold text-sm transition-all">
-                        <span>Consultar Disponibilidad de Andamios</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- GALLERY / PORTFOLIO SECTION -->
-    <section id="galeria" class="py-24 bg-brand-dark text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <span class="px-3.5 py-1.5 bg-brand-cyan/10 text-brand-cyan font-bold text-xs rounded-full uppercase tracking-wider">
-                    Galería de Trabajos Realizados
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-black font-display">Nuestra Experiencia en Campo</h2>
-                <p class="text-slate-400 text-base">Explora algunas de las obras, montajes e instalaciones fabricadas por OBH Metales SAC.</p>
-            </div>
-
-            <!-- Category Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12" id="gallery-filters">
-                <button class="filter-btn active px-5 py-2.5 rounded-xl bg-brand-blue text-white font-bold text-sm transition-all shadow-md" data-filter="all">
-                    Todos
-                </button>
-                <button class="filter-btn px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-sm hover:bg-slate-700 transition-all" data-filter="estructuras">
-                    Estructuras
-                </button>
-                <button class="filter-btn px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-sm hover:bg-slate-700 transition-all" data-filter="carpinteria">
-                    Carpintería Metálica
-                </button>
-                <button class="filter-btn px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-sm hover:bg-slate-700 transition-all" data-filter="inox">
-                    Acero Inox
-                </button>
-                <button class="filter-btn px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-sm hover:bg-slate-700 transition-all" data-filter="equipos">
-                    Andamios / Montacargas
-                </button>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
-                
-                <!-- Project 1 -->
-                <div class="gallery-item estructuras group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl cursor-pointer" 
-                     data-title="Techo Parabólico Industrial - 800m²"
-                     data-src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" 
-                         alt="Techo Parabólico Industrial" 
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/800x600/1B2A4A/00F2FE?text=Estructura+Met%C3%A1lica+OBH'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-xs font-bold text-brand-cyan uppercase">Estructuras Metálicas</span>
-                        <h4 class="font-bold text-lg text-white">Nave Industrial y Techo Parabólico</h4>
-                        <p class="text-xs text-slate-300">Fabricación y tijerales reticulados pesados.</p>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="gallery-item carpinteria group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl cursor-pointer"
-                     data-title="Portón Seccional Industrial de Alto Tráfico"
-                     data-src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80">
-                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" 
-                         alt="Portón Seccional Industrial" 
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/800x600/1B2A4A/00F2FE?text=Carpinteria+Metalica+OBH'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-xs font-bold text-brand-cyan uppercase">Carpintería Metálica</span>
-                        <h4 class="font-bold text-lg text-white">Portón Industrial Seccional</h4>
-                        <p class="text-xs text-slate-300">Cierre de seguridad con pintura anticorrosiva.</p>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="gallery-item inox group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl cursor-pointer"
-                     data-title="Barandas y Pasamanos en Acero Inoxidable 304"
-                     data-src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" 
-                         alt="Barandas Acero Inoxidable" 
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/800x600/1B2A4A/00F2FE?text=Trabajo+Inox+OBH'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-xs font-bold text-brand-cyan uppercase">Acero Inoxidable</span>
-                        <h4 class="font-bold text-lg text-white">Barandas Inox Satinado</h4>
-                        <p class="text-xs text-slate-300">Instalación en edificio corporativo.</p>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="gallery-item equipos group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl cursor-pointer"
-                     data-title="Montaje de Estructuras con Montacargas"
-                     data-src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" 
-                         alt="Maniobra con Montacargas" 
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/800x600/1B2A4A/00F2FE?text=Servicio+Montacargas'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-xs font-bold text-brand-cyan uppercase">Montacargas & Equipos</span>
-                        <h4 class="font-bold text-lg text-white">Izaje y Montaje de Vigas</h4>
-                        <p class="text-xs text-slate-300">Operador calificado y maniobra segura.</p>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="gallery-item estructuras group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl cursor-pointer"
-                     data-title="Galpón Metalmecánico para Almacén"
-                     data-src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=1000&q=80">
-                    <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=800&q=80" 
-                         alt="Galpón Metalmecánico" 
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/800x600/1B2A4A/00F2FE?text=Galpon+Estructura'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-xs font-bold text-brand-cyan uppercase">Estructuras Metálicas</span>
-                        <h4 class="font-bold text-lg text-white">Estructura para Galpón</h4>
-                        <p class="text-xs text-slate-300">Armado rápido y resistencia sísmica.</p>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="gallery-item equipos group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl cursor-pointer"
-                     data-title="Montaje de Andamios Normados para Fachada"
-                     data-src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1000&q=80">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80" 
-                         alt="Andamios Normados" 
-                         class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                         onerror="this.src='https://placehold.co/800x600/1B2A4A/00F2FE?text=Andamios+Normados'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                        <span class="text-xs font-bold text-brand-cyan uppercase">Andamios Normados</span>
-                        <h4 class="font-bold text-lg text-white">Andamios para Trabajo en Altura</h4>
-                        <p class="text-xs text-slate-300">Alquiler e inspección operacional.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- LIGHTBOX MODAL -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4 sm:p-8 backdrop-blur-md">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-slate-400 hover:text-white text-3xl focus:outline-none">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div class="max-w-4xl w-full space-y-4 text-center">
-            <img id="lightbox-img" src="" alt="Vista Previa de Proyecto OBH Metales" class="max-h-[80vh] w-auto mx-auto rounded-2xl border border-slate-800 shadow-2xl">
-            <h3 id="lightbox-title" class="text-xl font-bold text-white font-display"></h3>
-        </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+        <li><a href="#faq" class="nav-link">Preguntas</a></li>
+        <li><a href="#contacto" class="btn-contact-header">Cotizar Ahora</a></li>
+      </ul>
     </div>
+  </header>
 
-    <!-- INTERACTIVE ESTIMATOR / COTIZADOR PRO -->
-    <section id="cotizador" class="py-24 bg-gradient-to-b from-brand-dark via-slate-900 to-brand-dark text-white relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center mb-12 space-y-3">
-                <span class="px-3.5 py-1.5 bg-brand-cyan/20 text-brand-cyan text-xs font-bold rounded-full uppercase tracking-wider">
-                    Cotizador Express Automatizado
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-black font-display">Pre-Cotiza Tu Proyecto en 1 Minuto</h2>
-                <p class="text-slate-400 text-sm">Completa las características de tu requerimiento y envíalo directamente a nuestro equipo técnico por WhatsApp.</p>
-            </div>
-
-            <div class="glass-panel p-6 sm:p-10 rounded-3xl shadow-glow-blue border border-slate-800 space-y-8">
-                
-                <!-- Step 1: Select Service -->
-                <div class="space-y-3">
-                    <label class="block text-sm font-bold text-slate-200">1. Selecciona el Tipo de Servicio:</label>
-                    <select id="quote-service" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-white font-medium focus:outline-none focus:border-brand-cyan">
-                        <option value="Estructuras Metálicas / Naves Industriales">Estructuras Metálicas / Naves Industriales / Techos</option>
-                        <option value="Carpintería Metálica (Portones, Puertas, Escaleras)">Carpintería Metálica (Portones, Puertas, Escaleras)</option>
-                        <option value="Trabajo Especial en Acero Inoxidable">Trabajo Especial en Acero Inoxidable</option>
-                        <option value="Servicio de Montacargas y Izaje">Servicio de Montacargas y Izaje Pesado</option>
-                        <option value="Alquiler o Venta de Andamios">Alquiler o Venta de Andamios Normados</option>
-                    </select>
-                </div>
-
-                <!-- Step 2: Dimensions & Location -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                        <label class="block text-sm font-bold text-slate-200">2. Medidas Aprox. / Cantidad:</label>
-                        <input type="text" id="quote-size" placeholder="Ej. 120 m² / 4 cuerpos de andamio" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-white placeholder-slate-500 font-medium focus:outline-none focus:border-brand-cyan">
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="block text-sm font-bold text-slate-200">3. Ubicación del Trabajo:</label>
-                        <input type="text" id="quote-location" placeholder="Ej. Lima Norte, Callao, Lurín, Provincia" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-white placeholder-slate-500 font-medium focus:outline-none focus:border-brand-cyan">
-                    </div>
-                </div>
-
-                <!-- Step 3: Specific Comments -->
-                <div class="space-y-2">
-                    <label class="block text-sm font-bold text-slate-200">4. Detalles del Proyecto / Especificaciones:</label>
-                    <textarea id="quote-details" rows="3" placeholder="Indica si cuentas con planos, altura del techo, tipo de material deseado u observaciones importantes..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-white placeholder-slate-500 font-medium focus:outline-none focus:border-brand-cyan"></textarea>
-                </div>
-
-                <!-- Submit WhatsApp Button -->
-                <button id="quote-submit-btn" type="button" class="w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-white font-extrabold text-lg py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    <span>Enviar Requerimiento por WhatsApp (901 538 435)</span>
-                </button>
-
-                <p class="text-center text-xs text-slate-400">Atención inmediata • Te responderemos con la disponibilidad y presupuesto estimado.</p>
-
-            </div>
+  <!-- HERO SECTION -->
+  <section id="inicio" class="hero">
+    <canvas id="sparksCanvas" class="hero-canvas"></canvas>
+    
+    <div class="container hero-grid">
+      <div class="hero-text-content">
+        <div class="hero-tag">
+          <i class="fas fa-certificate"></i> Especialistas en Estructuras
         </div>
-    </section>
-
-    <!-- TESTIMONIALS SECTION -->
-    <section class="py-20 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <span class="px-3.5 py-1.5 bg-brand-blue/10 text-brand-blue font-bold text-xs rounded-full uppercase tracking-wider">Testimonios</span>
-                <h2 class="text-3xl font-black font-display text-slate-900">Lo que Opinan Nuestros Clientes</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4 shadow-sm">
-                    <div class="flex text-amber-400 text-sm gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed italic">
-                        "Contratamos a OBH Metales SAC para la fabricación e instalación del techo parabólico de nuestro almacén principal. Destacan por su puntualidad y excelente acabado estructural."
-                    </p>
-                    <div class="pt-2 border-t border-slate-200">
-                        <p class="font-bold text-slate-900 text-sm">Ing. Carlos Mendoza</p>
-                        <p class="text-xs text-slate-500">Jefe de Operaciones Logísticas</p>
-                    </div>
-                </div>
-
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4 shadow-sm">
-                    <div class="flex text-amber-400 text-sm gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed italic">
-                        "Muy buen servicio en carpintería metálica e inox. Fabricaron las barandas de seguridad e instalación de portones para una obra en tiempo récord."
-                    </p>
-                    <div class="pt-2 border-t border-slate-200">
-                        <p class="font-bold text-slate-900 text-sm">Arq. Valeria Ríos</p>
-                        <p class="text-xs text-slate-500">Constructora e Inmobiliaria</p>
-                    </div>
-                </div>
-
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4 shadow-sm">
-                    <div class="flex text-amber-400 text-sm gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-600 text-sm leading-relaxed italic">
-                        "El alquiler de andamios y montacargas fue súper fluido. Equipos en perfecto estado y con el operador muy profesional en todo momento."
-                    </p>
-                    <div class="pt-2 border-t border-slate-200">
-                        <p class="font-bold text-slate-900 text-sm">Roberto Sánchez</p>
-                        <p class="text-xs text-slate-500">Contratista General</p>
-                    </div>
-                </div>
-
-            </div>
+        <h1 class="hero-title">
+          Ingeniería y Montaje de <span>Estructuras Metálicas</span>
+        </h1>
+        <p class="hero-subtitle">
+          OBH Metales SAC te garantiza la máxima precisión en fabricación, diseño, instalación y montaje industrial a nivel nacional.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/51901538435?text=Hola,%20deseo%20solicitar%20una%20cotización%20para%20un%20proyecto." target="_blank" class="btn-primary">
+            <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-outline">
+            Ver Servicios <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
-    </section>
+      </div>
 
-    <!-- FAQ ACCORDION SECTION -->
-    <section id="faq" class="py-20 bg-slate-50 border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 space-y-3">
-                <span class="px-3.5 py-1.5 bg-brand-blue/10 text-brand-blue font-bold text-xs rounded-full uppercase tracking-wider">
-                    Resolvemos tus Dudas
-                </span>
-                <h2 class="text-3xl font-black font-display text-slate-900">Preguntas Frecuentes</h2>
-            </div>
+      <!-- Cotizador Rápido -->
+      <div class="hero-card-quote">
+        <h3><i class="fas fa-calculator" style="color:var(--cyan-accent)"></i> Cotizador Express</h3>
+        <p>Envíanos los detalles rápidos de tu proyecto y recibe atención prioritaria:</p>
+        
+        <form id="expressQuoteForm">
+          <div class="form-group">
+            <label for="quoteService">Servicio Requerido</label>
+            <select id="quoteService" class="form-control" required>
+              <option value="Estructuras Metálicas">Estructuras Metálicas</option>
+              <option value="Carpintería Metálica">Carpintería Metálica</option>
+              <option value="Trabajos en Acero Inox">Trabajo Inox</option>
+              <option value="Servicio de Montacargas">Servicio de Montacargas</option>
+              <option value="Alquiler/Venta de Andamios">Alquiler y Venta de Andamios</option>
+            </select>
+          </div>
 
-            <div class="space-y-4" id="faq-container">
-                
-                <!-- FAQ 1 -->
-                <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="faq-btn w-full p-6 text-left font-bold text-slate-900 text-lg flex items-center justify-between focus:outline-none">
-                        <span>¿Emiten comprobantes de pago como Factura electrónica?</span>
-                        <i class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed">
-                        Sí, en <strong>OBH METALES S.A.C.</strong> somos una empresa formalmente constituida con RUC 20. Emitimos facturas electrónicas y guías según los requerimientos tributarios de tu empresa.
-                    </div>
-                </div>
+          <div class="form-group">
+            <label for="quoteName">Tu Nombre o Empresa</label>
+            <input type="text" id="quoteName" class="form-control" placeholder="Ej. Constructora SAC" required>
+          </div>
 
-                <!-- FAQ 2 -->
-                <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="faq-btn w-full p-6 text-left font-bold text-slate-900 text-lg flex items-center justify-between focus:outline-none">
-                        <span>¿Realizan trabajos fuera de Lima o a nivel nacional?</span>
-                        <i class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed">
-                        Sí, ejecutamos proyectos de fabricación y montaje de estructuras metálicas en Lima Metropolitana, Callao y en las diversas regiones del territorio peruano.
-                    </div>
-                </div>
+          <div class="form-group">
+            <label for="quotePhone">Teléfono / WhatsApp</label>
+            <input type="tel" id="quotePhone" class="form-control" placeholder="Ej. 901538435" required>
+          </div>
 
-                <!-- FAQ 3 -->
-                <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="faq-btn w-full p-6 text-left font-bold text-slate-900 text-lg flex items-center justify-between focus:outline-none">
-                        <span>¿Cuál es el tiempo de entrega o fabricación de una nave o techo?</span>
-                        <i class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed">
-                        El tiempo varía según los metros cuadrados y la complejidad estructural. Previo al inicio de obra presentamos un cronograma detallado que garantizamos cumplir estrictamente.
-                    </div>
-                </div>
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <i class="fas fa-paper-plane"></i> Solicitar Presupuesto
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-                <!-- FAQ 4 -->
-                <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="faq-btn w-full p-6 text-left font-bold text-slate-900 text-lg flex items-center justify-between focus:outline-none">
-                        <span>¿Cuentan con andamios normados y seguros?</span>
-                        <i class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed">
-                        Así es. Nuestros andamios cumplen con las normativas de seguridad e higiene industrial para trabajos en altura, asegurando plataformas estables y resistentes.
-                    </div>
-                </div>
+  <!-- MÉTRICAS -->
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div>
+        <div class="stat-number" data-target="150">+150</div>
+        <div class="stat-label">Proyectos Completados</div>
+      </div>
+      <div>
+        <div class="stat-number" data-target="100">100%</div>
+        <div class="stat-label">Garantía en Estructuras</div>
+      </div>
+      <div>
+        <div class="stat-number" data-target="12">+12</div>
+        <div class="stat-label">Años de Experiencia</div>
+      </div>
+      <div>
+        <div class="stat-number" data-target="24">24/7</div>
+        <div class="stat-label">Soporte y Asesoría</div>
+      </div>
+    </div>
+  </section>
 
-            </div>
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section-padding">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Lo Que Hacemos</span>
+        <h2 class="section-title">Nuestros Servicios Especializados</h2>
+      </div>
+
+      <div class="services-grid">
+        <!-- Servicio 1 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-building"></i></div>
+          <h3 class="service-title">Estructuras Metálicas</h3>
+          <p class="service-desc">Fabricación y montaje de naves industriales, techos parabólicos, tijerales, coberturas ligeras y pesadas con cálculo de ingeniería.</p>
+          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
-    </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contacto" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12">
-                
-                <div class="lg:col-span-6 space-y-8">
-                    <div>
-                        <span class="px-3.5 py-1.5 bg-brand-blue/10 text-brand-blue font-bold text-xs rounded-full uppercase tracking-wider">
-                            Contacto Directo
-                        </span>
-                        <h2 class="text-3xl sm:text-4xl font-black font-display text-slate-900 mt-3">Comunícate con Nuestros Especialistas</h2>
-                        <p class="text-slate-600 mt-2">Estamos listos para atender tus requerimientos, agendar visitas técnicas en terreno y enviarte presupuestos detallados.</p>
-                    </div>
-
-                    <!-- Contact Cards -->
-                    <div class="space-y-4">
-                        <a href="https://wa.me/51901538435" target="_blank" class="flex items-center gap-5 p-5 rounded-2xl bg-emerald-50 border border-emerald-200/80 hover:scale-[1.02] transition-transform">
-                            <div class="w-14 h-14 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Atención WhatsApp Directa</p>
-                                <p class="text-2xl font-black text-slate-900">+51 901 538 435</p>
-                                <p class="text-xs text-slate-500">Respuesta inmediata para cotizaciones</p>
-                            </div>
-                        </a>
-
-                        <a href="https://www.facebook.com/search/top?q=OBH%20METALES%20SAC" target="_blank" class="flex items-center gap-5 p-5 rounded-2xl bg-blue-50 border border-blue-200/80 hover:scale-[1.02] transition-transform">
-                            <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-blue-800 uppercase tracking-wider">Página Oficial de Facebook</p>
-                                <p class="text-xl font-bold text-slate-900">OBH METALES SAC</p>
-                                <p class="text-xs text-slate-500">Síguenos para ver publicaciones y novedades</p>
-                            </div>
-                        </a>
-
-                        <div class="flex items-center gap-5 p-5 rounded-2xl bg-slate-50 border border-slate-200">
-                            <div class="w-14 h-14 bg-brand-navy text-brand-cyan rounded-2xl flex items-center justify-center text-3xl shadow-lg">
-                                <i class="fa-solid fa-globe"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Dominio Web Oficial</p>
-                                <p class="text-xl font-bold text-slate-900">www.obhmetales.com</p>
-                                <p class="text-xs text-slate-500">Ingeniería y estructuras metálicas en Perú</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Info Box Card -->
-                <div class="lg:col-span-6 bg-brand-dark text-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-slate-800 flex flex-col justify-between">
-                    <div class="space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-cyan/20 text-brand-cyan text-xs font-bold">
-                            <i class="fa-solid fa-shield-halved"></i> OBH METALES SAC • RUC 20
-                        </div>
-
-                        <h3 class="text-2xl sm:text-3xl font-black font-display">Compromiso, Resistencia y Garantía de Obra</h3>
-
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Si buscas seguridad en soldadura, habilitado preciso e ingeniería con altos estándares para tu galpón o empresa, OBH Metales SAC es tu aliado estratégico.
-                        </p>
-
-                        <div class="space-y-3 pt-2">
-                            <div class="flex items-center gap-3 text-sm text-slate-200">
-                                <i class="fa-solid fa-circle-check text-brand-cyan"></i>
-                                <span>Visitas técnicas en obra sin compromiso</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-slate-200">
-                                <i class="fa-solid fa-circle-check text-brand-cyan"></i>
-                                <span>Personal homologado con SCTR de seguridad</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-slate-200">
-                                <i class="fa-solid fa-circle-check text-brand-cyan"></i>
-                                <span>Fabricación a la medida y requerimientos especiales</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-8 border-t border-slate-800 mt-8">
-                        <a href="https://wa.me/51901538435?text=Deseo%20coordinar%20una%20visita%20t%C3%A9cnica%20a%20mi%20obra." 
-                           target="_blank" 
-                           class="w-full flex items-center justify-center gap-3 bg-brand-blue hover:bg-blue-600 text-white font-extrabold py-4 rounded-xl shadow-lg transition-all">
-                            <i class="fa-solid fa-calendar-check text-lg"></i>
-                            <span>Agendar Visita Técnica en Campo</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+        <!-- Servicio 2 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <h3 class="service-title">Carpintería Metálica</h3>
+          <p class="service-desc">Diseño y fabricación de puertas industriales, portones apanados, barandas, escaleras de emergencia, rejas y cerramientos metálicos.</p>
+          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-10 mb-12">
-                
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-brand-blue rounded-xl text-white font-black text-sm">OBH</div>
-                        <span class="text-xl font-bold font-display text-white">OBH METALES S.A.C.</span>
-                    </div>
-                    <p class="text-sm text-slate-400 max-w-sm">
-                        Especialistas en ingeniería, fabricación y montaje de estructuras metálicas, carpintería, acero inoxidable, alquiler de andamios y montacargas en Perú.
-                    </p>
-                </div>
-
-                <div class="space-y-3">
-                    <h4 class="text-white font-bold text-sm font-display">Enlaces Rápidos</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#inicio" class="hover:text-brand-cyan transition-colors">Inicio</a></li>
-                        <li><a href="#nosotros" class="hover:text-brand-cyan transition-colors">Nosotros</a></li>
-                        <li><a href="#servicios" class="hover:text-brand-cyan transition-colors">Servicios</a></li>
-                        <li><a href="#galeria" class="hover:text-brand-cyan transition-colors">Galería de Proyectos</a></li>
-                        <li><a href="#cotizador" class="hover:text-brand-cyan transition-colors">Cotizador WhatsApp</a></li>
-                    </ul>
-                </div>
-
-                <div class="space-y-3">
-                    <h4 class="text-white font-bold text-sm font-display">Contacto</h4>
-                    <p class="text-sm">WhatsApp: <strong class="text-white">901 538 435</strong></p>
-                    <p class="text-sm">Web: <strong class="text-white">www.obhmetales.com</strong></p>
-                    <p class="text-sm">Facebook: <strong class="text-white">OBH METALES SAC</strong></p>
-                    <p class="text-xs text-slate-500 mt-2">Atención a nivel nacional</p>
-                </div>
-
-            </div>
-
-            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-                <p>&copy; 2026 OBH Metales SAC. Todos los derechos reservados.</p>
-                <p class="text-slate-500">Ingeniería en Fabricación y Montajes de Estructuras de Metal.</p>
-            </div>
+        <!-- Servicio 3 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="service-title">Trabajos en Inox</h3>
+          <p class="service-desc">Mecanizado y soldadura TIG/MIG en acero inoxidable para sectores alimentarios, médicos e industriales de alta exigencia.</p>
+          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
-    </footer>
 
-    <!-- FLOATING WHATSAPP BUTTON WITH PULSE -->
-    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-        <div class="hidden sm:block bg-brand-dark border border-slate-700 text-white text-xs font-bold py-2 px-3 rounded-xl shadow-xl animate-bounce">
-            ¡Chatea con un especialista! 👇
+        <!-- Servicio 4 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-truck-loading"></i></div>
+          <h3 class="service-title">Servicio de Montacargas</h3>
+          <p class="service-desc">Alquiler y maniobras con equipos de elevación y montacargas de alta capacidad con operadores certificados.</p>
+          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
-        <a href="https://wa.me/51901538435?text=Hola%20OBH%20Metales,%20necesito%20atenci%C3%B3n%20para%20un%20proyecto." 
-           target="_blank" 
-           rel="noopener noreferrer"
-           aria-label="Contactar por WhatsApp"
-           class="relative bg-emerald-500 hover:bg-emerald-400 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl transition-transform hover:scale-110">
-            <span class="absolute -inset-1 rounded-full bg-emerald-500 opacity-50 blur-sm animate-ping"></span>
-            <i class="fa-brands fa-whatsapp relative z-10"></i>
+
+        <!-- Servicio 5 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cubes"></i></div>
+          <h3 class="service-title">Alquiler y Venta de Andamios</h3>
+          <p class="service-desc">Andamios normados para trabajos en altura, multidireccionales y acoples con estándares de seguridad garantizados.</p>
+          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Servicio 6 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+          <h3 class="service-title">Ingeniería y Proyectos</h3>
+          <p class="service-desc">Asesoría técnica integral, desarrollo de planos, memorias descriptivas y supervisión de obras metalmecánicas.</p>
+          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="section-padding" style="background: var(--bg-card);">
+    <div class="container about-grid">
+      <div class="about-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Especialistas de OBH Metales SAC trabajando en taller">
+        <div class="about-badge">
+          <i class="fas fa-award about-badge-icon"></i>
+          <div>
+            <strong style="display:block; font-size: 1.1rem; color:var(--white)">Empresa Garantizada</strong>
+            <span style="font-size:0.85rem; color:var(--text-muted)">Cumplimos con normas ISO y NTP</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-subtitle">Sobre OBH Metales SAC</span>
+        <h2 class="section-title">Los Mejores Especialistas en Estructuras</h2>
+        <p style="color:var(--text-muted); margin-top: 15px;">
+          En <strong>OBH Metales SAC</strong> nos dedicamos a ofrecer soluciones integrales en ingeniería, fabricación y montaje de estructuras de metal. Garantizamos resistencia, durabilidad y máxima seguridad en cada una de nuestras obras.
+        </p>
+
+        <ul class="about-feature-list">
+          <li class="about-feature-item">
+            <i class="fas fa-check-circle"></i>
+            <div><strong>Personal Calificado:</strong> Homologados en procesos de soldadura avanzada y normas de seguridad industrial.</div>
+          </li>
+          <li class="about-feature-item">
+            <i class="fas fa-check-circle"></i>
+            <div><strong>Materiales de Primera:</strong> Trabajamos exclusivamente con aceros de calidad certificada.</div>
+          </li>
+          <li class="about-feature-item">
+            <i class="fas fa-check-circle"></i>
+            <div><strong>Entrega Puntual:</strong> Cumplimiento estricto del cronograma pactado con nuestros clientes.</div>
+          </li>
+        </ul>
+
+        <a href="https://wa.me/51901538435?text=Deseo%20más%20información%20sobre%20la%20empresa" class="btn-primary" target="_blank">
+          <i class="fas fa-comments"></i> Hablar con un Asesor
         </a>
+      </div>
     </div>
+  </section>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. Mobile Menu Toggle
-            const mobileToggle = document.getElementById('mobile-menu-toggle');
-            const mobileDropdown = document.getElementById('mobile-dropdown');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  <!-- PROYECTOS / GALERÍA -->
+  <section id="proyectos" class="section-padding">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Nuestras Obras</span>
+        <h2 class="section-title">Galeria de Proyectos Reales</h2>
+      </div>
 
-            mobileToggle.addEventListener('click', () => {
-                mobileDropdown.classList.toggle('hidden');
-            });
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="estructuras">Estructuras</button>
+        <button class="filter-btn" data-filter="carpinteria">Carpintería</button>
+        <button class="filter-btn" data-filter="inox">Inox</button>
+      </div>
 
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileDropdown.classList.add('hidden');
-                });
-            });
+      <div class="portfolio-grid">
+        <!-- Proyecto 1 -->
+        <div class="portfolio-item" data-category="estructuras">
+          <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Nave Industrial Metálica">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Estructuras Metálicas</span>
+            <h4 class="portfolio-title">Montaje de Nave Industrial</h4>
+          </div>
+        </div>
 
-            // 2. Spark Canvas Effect (Simulated Welding Sparks)
-            const canvas = document.getElementById('sparks-canvas');
-            if (canvas) {
-                const ctx = canvas.getContext('2d');
-                let width = canvas.width = window.innerWidth;
-                let height = canvas.height = window.innerHeight;
+        <!-- Proyecto 2 -->
+        <div class="portfolio-item" data-category="estructuras">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Techo Parabólico">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Estructuras Metálicas</span>
+            <h4 class="portfolio-title">Techo Parabólico Grande</h4>
+          </div>
+        </div>
 
-                window.addEventListener('resize', () => {
-                    width = canvas.width = window.innerWidth;
-                    height = canvas.height = window.innerHeight;
-                });
+        <!-- Proyecto 3 -->
+        <div class="portfolio-item" data-category="carpinteria">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Portón Industrial">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Carpintería Metálica</span>
+            <h4 class="portfolio-title">Portón Corredero Industrial</h4>
+          </div>
+        </div>
 
-                const particles = [];
-                for (let i = 0; i < 45; i++) {
-                    particles.push({
-                        x: Math.random() * width,
-                        y: Math.random() * height,
-                        radius: Math.random() * 2 + 1,
-                        vx: (Math.random() - 0.5) * 1.5,
-                        vy: -Math.random() * 2 - 0.5,
-                        alpha: Math.random(),
-                        color: Math.random() > 0.5 ? '#00F2FE' : '#FFD700'
-                    });
-                }
+        <!-- Proyecto 4 -->
+        <div class="portfolio-item" data-category="inox">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Barandas de Acero Inox">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Trabajo Inox</span>
+            <h4 class="portfolio-title">Barandas en Acero Inoxidable</h4>
+          </div>
+        </div>
 
-                function animateSparks() {
-                    ctx.clearRect(0, 0, width, height);
-                    particles.forEach(p => {
-                        p.x += p.vx;
-                        p.y += p.vy;
-                        p.alpha -= 0.005;
+        <!-- Proyecto 5 -->
+        <div class="portfolio-item" data-category="estructuras">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Escalera de Emergencia">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Estructuras Metálicas</span>
+            <h4 class="portfolio-title">Escaleras de Emergencia</h4>
+          </div>
+        </div>
 
-                        if (p.alpha <= 0 || p.y < 0) {
-                            p.x = Math.random() * width;
-                            p.y = height + 10;
-                            p.alpha = Math.random();
-                        }
+        <!-- Proyecto 6 -->
+        <div class="portfolio-item" data-category="carpinteria">
+          <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=800&q=80" alt="Estructuras de Soporte">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Carpintería Metálica</span>
+            <h4 class="portfolio-title">Estructura para Mezanine</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                        ctx.globalAlpha = p.alpha;
-                        ctx.beginPath();
-                        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                        ctx.fillStyle = p.color;
-                        ctx.fill();
-                    });
-                    requestAnimationFrame(animateSparks);
-                }
-                animateSparks();
-            }
+  <!-- LIGHTBOX PARA VER FOTOS -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Vista ampliada">
+  </div>
 
-            // 3. Counter Animation
-            const counters = document.querySelectorAll('.counter');
-            let animated = false;
+  <!-- FAQ PREGUNTAS FRECUENTES -->
+  <section id="faq" class="section-padding" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Dudas Frecuentes</span>
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+      </div>
 
-            function runCounters() {
-                const triggerBottom = window.innerHeight * 0.85;
-                counters.forEach(counter => {
-                    const counterTop = counter.getBoundingClientRect().top;
-                    if (counterTop < triggerBottom && !animated) {
-                        const target = +counter.getAttribute('data-target');
-                        let count = 0;
-                        const speed = target / 50;
-                        const updateCount = () => {
-                            count += speed;
-                            if (count < target) {
-                                counter.innerText = Math.ceil(count);
-                                setTimeout(updateCount, 25);
-                            } else {
-                                counter.innerText = target;
-                            }
-                        };
-                        updateCount();
-                    }
-                });
-            }
-            window.addEventListener('scroll', runCounters);
-            runCounters();
+      <div class="faq-wrapper">
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Realizan trabajos a nivel nacional?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Sí, en OBH Metales SAC contamos con capacidad logística para trasladar equipos, materiales y cuadrillas de técnicos a cualquier región del país.
+          </div>
+        </div>
 
-            // 4. Gallery Filtering System
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Emiten factura y comprobante legal?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Totalmente. Somos una Sociedad Anónima Cerrada (S.A.C.) debidamente registrada con RUC 20 y emitida con todas las garantías de ley.
+          </div>
+        </div>
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => {
-                        b.classList.remove('bg-brand-blue', 'text-white');
-                        b.classList.add('bg-slate-800', 'text-slate-300');
-                    });
-                    btn.classList.remove('bg-slate-800', 'text-slate-300');
-                    btn.classList.add('bg-brand-blue', 'text-white');
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Cómo solicito una cotización formal?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Puedes comunicarte al teléfono/WhatsApp <strong>901 538 435</strong> o utilizar el formulario de la página web. Si posees planos técnicos, los puedes adjuntar vía correo o WhatsApp.
+          </div>
+        </div>
 
-                    const filter = btn.getAttribute('data-filter');
-                    galleryItems.forEach(item => {
-                        if (filter === 'all' || item.classList.contains(filter)) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Ofrecen garantía sobre las estructuras instaladas?
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Todas nuestras obras cuentan con garantía estructural por escrito y certificado de calidad de los materiales utilizados.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // 5. Lightbox Preview
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxTitle = document.getElementById('lightbox-title');
-            const lightboxClose = document.getElementById('lightbox-close');
+  <!-- CONTACTO -->
+  <section id="contacto" class="section-padding">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">Atención Directa</span>
+        <h2 class="section-title">Contáctate con Nosotros</h2>
+      </div>
 
-            galleryItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const src = item.getAttribute('data-src');
-                    const title = item.getAttribute('data-title');
-                    lightboxImg.src = src;
-                    lightboxTitle.innerText = title;
-                    lightbox.classList.add('active');
-                });
-            });
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3 style="margin-bottom: 25px; font-size: 1.4rem;">Información Corporativa</h3>
 
-            lightboxClose.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-            });
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-details">
+              <h4>Llámanos o Escríbenos</h4>
+              <a href="https://wa.me/51901538435" target="_blank">901 538 435</a>
+            </div>
+          </div>
 
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    lightbox.classList.remove('active');
-                }
-            });
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-globe"></i></div>
+            <div class="contact-details">
+              <h4>Página Web Oficial</h4>
+              <p>www.obhmetales.com</p>
+            </div>
+          </div>
 
-            // 6. FAQ Accordion Toggle
-            const faqBtns = document.querySelectorAll('.faq-btn');
-            faqBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const answer = btn.nextElementSibling;
-                    const icon = btn.querySelector('i');
-                    const isHidden = answer.classList.contains('hidden');
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="contact-details">
+              <h4>Página de Facebook</h4>
+              <p>OBH METALES SAC</p>
+            </div>
+          </div>
 
-                    document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
-                    document.querySelectorAll('.faq-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-details">
+              <h4>Atención</h4>
+              <p>Servicio y Cobertura a Nivel Nacional</p>
+            </div>
+          </div>
 
-                    if (isHidden) {
-                        answer.classList.remove('hidden');
-                        icon.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
+          <div class="social-links">
+            <a href="https://facebook.com" class="social-btn" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://tiktok.com" class="social-btn" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/51901538435" class="social-btn" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
 
-            // 7. Interactive WhatsApp Quote Generator
-            const submitQuoteBtn = document.getElementById('quote-submit-btn');
-            submitQuoteBtn.addEventListener('click', () => {
-                const service = document.getElementById('quote-service').value;
-                const size = document.getElementById('quote-size').value || 'No especificado';
-                const location = document.getElementById('quote-location').value || 'No especificada';
-                const details = document.getElementById('quote-details').value || 'Sin detalles adicionales';
+        <div class="contact-info-card">
+          <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Envíanos un Mensaje</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="contactName">Nombre Completo</label>
+              <input type="text" id="contactName" class="form-control" placeholder="Ej. Juan Pérez" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Correo Electrónico / Teléfono</label>
+              <input type="text" id="contactEmail" class="form-control" placeholder="Ej. correo@ejemplo.com o 901538435" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Detalles del Proyecto</label>
+              <textarea id="contactMessage" class="form-control" rows="4" placeholder="Escribe las medidas, tipo de estructura o trabajo requerido..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+              <i class="fab fa-whatsapp"></i> Enviar Mensaje por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                const text = `*SOLICITUD DE COTIZACIÓN - OBH METALES SAC*%0A%0A` +
-                             `*Servicio Requerido:* ${encodeURIComponent(service)}%0A` +
-                             `*Medida/Cantidad:* ${encodeURIComponent(size)}%0A` +
-                             `*Ubicación:* ${encodeURIComponent(location)}%0A` +
-                             `*Detalles Adicionales:* ${encodeURIComponent(details)}%0A%0A` +
-                             `_Enviado desde la página web oficial www.obhmetales.com_`;
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo">
+            <svg class="logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:40px;">
+              <path d="M50 10 L85 35 V85 H15 V35 Z" stroke="#00d2ff" stroke-width="6" fill="none"/>
+              <path d="M30 45 H70 V75 H30 Z" fill="#1b63c6"/>
+              <text x="50" y="66" font-family="Montserrat" font-weight="900" font-size="20" fill="#ffffff" text-anchor="middle">OBH</text>
+            </svg>
+            <div class="logo-text">OBH METALES SAC</div>
+          </div>
+          <p>Especialistas en ingeniería, fabricación y montaje de estructuras de metal, carpintería metálica, acero inoxidable y servicios auxiliares.</p>
+        </div>
 
-                window.open(`https://wa.me/51901538435?text=${text}`, '_blank');
-            });
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
 
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">Estructuras Metálicas</a></li>
+            <li><a href="#servicios">Carpintería Metálica</a></li>
+            <li><a href="#servicios">Trabajos Inox</a></li>
+            <li><a href="#servicios">Montacargas y Andamios</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> <strong>OBH METALES SAC</strong>. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a href="https://wa.me/51901538435?text=Hola!%20Vengo%20de%20la%20página%20web%20y%20deseo%20mayor%20información." class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPTS JAVASCRIPT -->
+  <script>
+    // Año dinámico en footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Menú Hamburguesa Móvil
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Cerrar menú móvil al hacer clic en un enlace
+    document.querySelectorAll('.nav-link, .btn-contact-header').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+
+    // FAQ Acordeón
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isOpen) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Filtros de Galería
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
         });
-    </script>
+      });
+    });
+
+    // Lightbox para imágenes
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+      }
+    });
+
+    // Enviar Cotizador Express por WhatsApp
+    document.getElementById('expressQuoteForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const service = document.getElementById('quoteService').value;
+      const name = document.getElementById('quoteName').value;
+      const phone = document.getElementById('quotePhone').value;
+
+      const message = `*SOLICITUD DE COTIZACIÓN EXPRESS*%0A%0A*Cliente/Empresa:* ${encodeURIComponent(name)}%0A*Teléfono:* ${encodeURIComponent(phone)}%0A*Servicio Requerido:* ${encodeURIComponent(service)}`;
+      window.open(`https://wa.me/51901538435?text=${message}`, '_blank');
+    });
+
+    // Enviar Formulario Principal por WhatsApp
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value;
+      const contact = document.getElementById('contactEmail').value;
+      const messageDetail = document.getElementById('contactMessage').value;
+
+      const message = `*CONSULTA DESDE LA WEB*%0A%0A*Nombre:* ${encodeURIComponent(name)}%0A*Contacto:* ${encodeURIComponent(contact)}%0A*Mensaje:* ${encodeURIComponent(messageDetail)}`;
+      window.open(`https://wa.me/51901538435?text=${message}`, '_blank');
+    });
+
+    // Animación del Canvas de Chispas en Hero
+    const canvas = document.getElementById('sparksCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const sparks = [];
+    class Spark {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = (Math.random() - 0.5) * 1.5;
+        this.speedY = -Math.random() * 2 - 0.5;
+        this.opacity = Math.random() * 0.8 + 0.2;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.opacity -= 0.008;
+        if (this.opacity <= 0 || this.y < 0) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.fillStyle = `rgba(0, 210, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 40; i++) {
+      sparks.push(new Spark());
+    }
+
+    function animateSparks() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      sparks.forEach(spark => {
+        spark.update();
+        spark.draw();
+      });
+      requestAnimationFrame(animateSparks);
+    }
+    animateSparks();
+  </script>
 </body>
 </html>
