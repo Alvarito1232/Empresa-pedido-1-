@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OBH Metales SAC | Estructuras Metálicas e Ingeniería</title>
-  <meta name="description" content="Especialistas en fabricación y montaje de estructuras metálicas, carpintería metálica, acero inoxidable, camión grúa telescópica, montacargas y venta de perfiles.">
+  <meta name="description" content="Especialistas en fabricación y montaje de estructuras metálicas, carpintería metálica, acero inoxidable, camión grúa telescópica y montacargas.">
   
   <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -392,7 +392,7 @@
       font-weight: 800;
     }
 
-    /* SERVICIOS - TODAS LAS TARJETAS CON LA IMAGEN DE FONDO 'sexooo123.jpg' */
+    /* SERVICIOS - TARJETAS CON FONDO 'sexooo123.jpg' */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -400,7 +400,6 @@
     }
 
     .service-card {
-      /* Fondo con imagen personalizada + capa oscura elegante para visibilidad perfecta */
       background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('sexooo123.jpg');
       background-size: cover;
       background-position: center;
@@ -650,7 +649,7 @@
       cursor: pointer;
     }
 
-    /* FAQ Y CONTACTO */
+    /* FAQ Y CONTACTO CON ICONOS MODERNOS */
     .faq-wrapper {
       max-width: 800px;
       margin: 0 auto;
@@ -729,6 +728,22 @@
       color: var(--cyan-accent);
       font-size: 1.2rem;
       flex-shrink: 0;
+    }
+
+    /* Colores específicos para iconos de redes sociales */
+    .contact-icon.whatsapp {
+      background: rgba(37, 211, 102, 0.15);
+      color: #25d366;
+    }
+
+    .contact-icon.tiktok {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .contact-icon.facebook {
+      background: rgba(24, 119, 242, 0.2);
+      color: #1877f2;
     }
 
     .contact-details h4 {
@@ -965,11 +980,10 @@
             <select id="quoteService" class="form-control" required>
               <option value="Estructuras Metálicas">Estructuras Metálicas</option>
               <option value="Carpintería Metálica">Carpintería Metálica</option>
-              <option value="Trabajos en Acero Inox">Trabajo Inox</option>
+              <option value="Trabajo en Acero Inox">Trabajo Inox</option>
               <option value="Servicio de Montacargas">Servicio de Montacargas</option>
-              <option value="Alquiler/Venta de Andamios">Alquiler y Venta de Andamios</option>
-              <option value="Camión Grúa Telescópica">Alquiler de Camión Grúa</option>
-              <option value="Venta de Perfiles">Venta de Perfiles</option>
+              <option value="Alquiler y Venta de Andamios">Alquiler y Venta de Andamios</option>
+              <option value="Alquiler de Camión Grúa">Alquiler de Camión Grúa</option>
             </select>
           </div>
 
@@ -1012,7 +1026,7 @@
     </div>
   </section>
 
-  <!-- SERVICIOS: TODAS LAS TARJETAS TIENEN 'sexooo123.jpg' DE FONDO -->
+  <!-- SERVICIOS -->
   <section id="servicios" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1035,7 +1049,7 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- TERCERA TARJETA CON COHETE Y FONDO -->
+        <!-- TERCERA TARJETA CON COHETE -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-rocket"></i></div>
           <h3 class="service-title">Trabajos en Inox</h3>
@@ -1068,13 +1082,6 @@
           <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
           <h3 class="service-title">Camión Grúa Telescópica</h3>
           <p class="service-desc">Alquiler de camiones grúa telescópica para maniobras, izaje y traslado de cargas pesadas con máxima seguridad.</p>
-          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
-          <h3 class="service-title">Venta de Perfiles</h3>
-          <p class="service-desc">Comercialización de perfiles metálicos estructurales (vigas, canales, ángulos, tubos) a medida para todos tus proyectos.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
@@ -1245,6 +1252,7 @@
     </div>
   </section>
 
+  <!-- SECCIÓN CONTACTO CON ICONOS DE WHATSAPP, TIKTOK Y FACEBOOK -->
   <section id="contacto" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1255,34 +1263,31 @@
       <div class="contact-grid">
         <div class="contact-info-card">
           <h3 style="margin-bottom: 25px; font-size: 1.4rem;">Información Corporativa</h3>
+          
           <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
             <div class="contact-details">
-              <h4>Llámanos o Escríbenos</h4>
+              <h4>WhatsApp Oficial</h4>
               <a href="https://wa.me/51901538435" target="_blank">901 538 435</a>
             </div>
           </div>
+
           <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-globe"></i></div>
-            <div class="contact-details">
-              <h4>Página Web Oficial</h4>
-              <p>www.obhmetales.com</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="contact-icon facebook"><i class="fab fa-facebook-f"></i></div>
             <div class="contact-details">
               <h4>Página de Facebook</h4>
               <a href="https://www.facebook.com/share/1F4fZGfmGW/" target="_blank">Visitar Facebook</a>
             </div>
           </div>
+
           <div class="contact-item">
-            <div class="contact-icon"><i class="fab fa-tiktok"></i></div>
+            <div class="contact-icon tiktok"><i class="fab fa-tiktok"></i></div>
             <div class="contact-details">
               <h4>TikTok Oficial</h4>
               <a href="https://www.tiktok.com/@obh_metales_sac?_r=1&_t=ZS-99r1wodh5HB" target="_blank">Visitar TikTok</a>
             </div>
           </div>
+
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div class="contact-details">
@@ -1290,6 +1295,7 @@
               <p>Servicio y Cobertura a Nivel Nacional</p>
             </div>
           </div>
+
           <div class="social-links">
             <a href="https://www.facebook.com/share/1F4fZGfmGW/" class="social-btn" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.tiktok.com/@obh_metales_sac?_r=1&_t=ZS-99r1wodh5HB" class="social-btn" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -1354,7 +1360,6 @@
             <li><a href="#servicios">Carpintería Metálica</a></li>
             <li><a href="#servicios">Trabajos Inox</a></li>
             <li><a href="#servicios">Grúa y Andamios</a></li>
-            <li><a href="#servicios">Venta de Perfiles</a></li>
           </ul>
         </div>
       </div>
