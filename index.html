@@ -289,53 +289,32 @@
       background: rgba(18, 34, 63, 0.9);
       border: 1px solid rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(20px);
-      padding: 30px;
+      padding: 25px;
       border-radius: var(--radius-md);
       box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .hero-logo-display {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      margin-bottom: 15px;
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
 
     .hero-card-quote h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--white);
     }
 
     .hero-card-quote p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
       font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--text-main);
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 12px 15px;
-      background: rgba(7, 19, 41, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius-sm);
-      color: var(--white);
-      font-family: inherit;
-      font-size: 0.95rem;
-      transition: var(--transition);
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--cyan-accent);
-      box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+      color: var(--text-muted);
+      margin-bottom: 15px;
     }
 
     /* ESTADÍSTICAS */
@@ -514,13 +493,13 @@
       gap: 8px;
     }
 
-    /* SECCIÓN NOSOTROS - MEJORADA CON MISIÓN, VISIÓN Y VALORES */
+    /* SECCIÓN NOSOTROS - MISIÓN Y VISIÓN */
     .about-main-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
       gap: 50px;
       align-items: center;
-      margin-bottom: 60px;
+      margin-bottom: 70px;
     }
 
     .about-image-wrapper {
@@ -590,6 +569,92 @@
     .mv-card p {
       font-size: 0.9rem;
       color: var(--text-muted);
+    }
+
+    /* SECCIÓN NUEVA: POR QUÉ ELEGIRNOS / QUÉ LO DIFERENCIA */
+    .diff-section {
+      background: linear-gradient(135deg, rgba(15, 38, 77, 0.4), rgba(7, 19, 41, 0.8));
+      border: 1px solid rgba(0, 210, 255, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 60px 40px;
+      margin-top: 50px;
+      box-shadow: var(--shadow);
+    }
+
+    .diff-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .diff-header h3 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .diff-header h3 span {
+      color: var(--cyan-accent);
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .diff-card {
+      background: rgba(11, 24, 46, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      transition: var(--transition);
+      position: relative;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .diff-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--cyan-accent);
+      background: rgba(18, 34, 63, 0.95);
+      box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2);
+    }
+
+    .diff-icon {
+      width: 55px;
+      height: 55px;
+      background: rgba(0, 210, 255, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--cyan-accent);
+      flex-shrink: 0;
+    }
+
+    .diff-content h4 {
+      font-size: 1.15rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .diff-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .diff-footer-quote {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--cyan-accent);
+      letter-spacing: 0.5px;
     }
 
     /* SECCIÓN DE VALORES */
@@ -1020,6 +1085,9 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
+      .diff-section {
+        padding: 40px 20px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1119,12 +1187,14 @@
         </div>
       </div>
 
+      <!-- LOGOTIPO CORPORATIVO DESTACADO EN EL INICIO + COTIZADOR EXPRESS -->
       <div class="hero-card-quote">
-        <h3><i class="fas fa-calculator" style="color:var(--cyan-accent)"></i> Cotizador Express</h3>
-        <p>Envíanos los detalles rápidos de tu proyecto y recibe atención prioritaria:</p>
+        <img src="logo 1.jpg" alt="OBH Metales SAC Logo Corporativo" class="hero-logo-display">
+        <h3>Cotizador Express</h3>
+        <p>Selecciona tu servicio y recibe atención prioritaria:</p>
         
         <form id="expressQuoteForm">
-          <div class="form-group">
+          <div class="form-group" style="text-align: left;">
             <label for="quoteService">Servicio Requerido</label>
             <select id="quoteService" class="form-control" required>
               <option value="Estructuras Metálicas">Estructuras Metálicas</option>
@@ -1136,17 +1206,17 @@
             </select>
           </div>
 
-          <div class="form-group">
+          <div class="form-group" style="text-align: left;">
             <label for="quoteName">Tu Nombre o Empresa</label>
             <input type="text" id="quoteName" class="form-control" placeholder="Ej. Constructora SAC" required>
           </div>
 
-          <div class="form-group">
+          <div class="form-group" style="text-align: left;">
             <label for="quotePhone">Teléfono / WhatsApp</label>
             <input type="tel" id="quotePhone" class="form-control" placeholder="Ej. 901538435" required>
           </div>
 
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 5px;">
             <i class="fas fa-paper-plane"></i> Solicitar Presupuesto
           </button>
         </form>
@@ -1236,7 +1306,7 @@
     </div>
   </section>
 
-  <!-- SECCIÓN NOSOTROS - AMPLIADA CON MISIÓN, VISIÓN Y VALORES -->
+  <!-- SECCIÓN NOSOTROS - CON MISIÓN, VISIÓN Y NUEVO APARTADO DE POR QUÉ ELEGIRNOS -->
   <section id="nosotros" class="section-padding" style="background: var(--bg-card);">
     <div class="container">
       <div class="about-main-grid">
@@ -1272,6 +1342,68 @@
           <a href="https://wa.me/51901538435?text=Deseo%20más%20información%20sobre%20la%20empresa" class="btn-primary" target="_blank">
             <i class="fas fa-comments"></i> Hablar con un Asesor
           </a>
+        </div>
+      </div>
+
+      <!-- NUEVO APARTADO: POR QUÉ ELEGIRNOS / LO QUE NOS DIFERENCIA -->
+      <div class="diff-section">
+        <div class="diff-header">
+          <span class="section-subtitle">Ventajas Competitivas</span>
+          <h3>¿Por qué Elegirnos? <span>Lo que nos Diferencia</span></h3>
+        </div>
+
+        <div class="diff-grid">
+          <div class="diff-card">
+            <div class="diff-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="diff-content">
+              <h4>Experiencia y Trayectoria</h4>
+              <p>Más de 12 años de experiencia en el desarrollo de proyectos de estructuras metálicas y soluciones industriales.</p>
+            </div>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-icon"><i class="fas fa-cogs"></i></div>
+            <div class="diff-content">
+              <h4>Ingeniería Especializada</h4>
+              <p>Aplicamos conocimientos técnicos y planificación para desarrollar soluciones adaptadas a las características de cada proyecto.</p>
+            </div>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-icon"><i class="fas fa-boxes"></i></div>
+            <div class="diff-content">
+              <h4>Servicio Integral</h4>
+              <p>Ofrecemos un servicio completo que comprende ingeniería, fabricación, traslado y montaje de estructuras metálicas.</p>
+            </div>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-icon"><i class="fas fa-users-cog"></i></div>
+            <div class="diff-content">
+              <h4>Personal Especializado</h4>
+              <p>Contamos con profesionales y técnicos capacitados para garantizar una adecuada ejecución de cada proyecto.</p>
+            </div>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="diff-content">
+              <h4>Compromiso con la Seguridad y Calidad</h4>
+              <p>Priorizamos la seguridad y el control de calidad durante las diferentes etapas de nuestros proyectos.</p>
+            </div>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-icon"><i class="fas fa-handshake"></i></div>
+            <div class="diff-content">
+              <h4>Atención Personalizada</h4>
+              <p>Trabajamos de manera cercana con cada cliente para comprender sus necesidades y brindar soluciones eficientes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="diff-footer-quote">
+          "Experiencia que construye confianza."
         </div>
       </div>
 
