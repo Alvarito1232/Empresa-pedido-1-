@@ -14,9 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ==========================================================================
-       VARIABLES Y ESTILOS BASE
-       ========================================================================== */
     :root {
       --primary-dark: #071329;
       --primary-blue: #0f3260;
@@ -72,9 +69,7 @@
       padding: 0 20px;
     }
 
-    /* ==========================================================================
-       HEADER & NAVEGACIÓN
-       ========================================================================== */
+    /* HEADER & NAVEGACIÓN */
     header {
       position: fixed;
       top: 0;
@@ -178,9 +173,7 @@
       padding: 5px;
     }
 
-    /* ==========================================================================
-       HERO SECTION
-       ========================================================================== */
+    /* HERO SECTION CON IMAGEN DE FONDO */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -188,7 +181,11 @@
       padding-bottom: 80px;
       display: flex;
       align-items: center;
-      background: radial-gradient(circle at 80% 20%, #123058 0%, var(--primary-dark) 70%);
+      /* AQUÍ SE INTEGRA TU IMAGEN DE PORTADA CON UN DEGRADADO OSCURO ENCIMA PARA MEJORAR LA LECTURA */
+      background: linear-gradient(to bottom, rgba(7, 19, 41, 0.85), rgba(7, 19, 41, 0.92)), url('estructuras metalicas.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       overflow: hidden;
     }
 
@@ -347,9 +344,7 @@
       box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
     }
 
-    /* ==========================================================================
-       ESTADÍSTICAS
-       ========================================================================== */
+    /* ESTADÍSTICAS */
     .stats-section {
       background: var(--bg-card);
       border-y: 1px solid rgba(255, 255, 255, 0.05);
@@ -382,9 +377,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* ==========================================================================
-       SECCIÓN GENERAL TITULOS
-       ========================================================================== */
+    /* TÍTULOS DE SECCIÓN */
     .section-padding {
       padding: 90px 0;
     }
@@ -410,9 +403,7 @@
       font-weight: 800;
     }
 
-    /* ==========================================================================
-       SERVICIOS
-       ========================================================================== */
+    /* SERVICIOS */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -487,9 +478,7 @@
       gap: 8px;
     }
 
-    /* ==========================================================================
-       NOSOTROS
-       ========================================================================== */
+    /* NOSOTROS */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -547,9 +536,7 @@
       margin-top: 4px;
     }
 
-    /* ==========================================================================
-       GALERÍA
-       ========================================================================== */
+    /* GALERÍA */
     .portfolio-filters {
       display: flex;
       justify-content: center;
@@ -666,9 +653,7 @@
       cursor: pointer;
     }
 
-    /* ==========================================================================
-       FAQ & CONTACTO
-       ========================================================================== */
+    /* FAQ Y CONTACTO */
     .faq-wrapper {
       max-width: 800px;
       margin: 0 auto;
@@ -788,9 +773,7 @@
       transform: translateY(-3px);
     }
 
-    /* ==========================================================================
-       FOOTER
-       ========================================================================== */
+    /* FOOTER */
     footer {
       background: #040c1a;
       border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -953,6 +936,7 @@
     </div>
   </header>
 
+  <!-- SECCIÓN HERO CON TU IMAGEN DE PORTADA -->
   <section id="inicio" class="hero">
     <canvas id="sparksCanvas" class="hero-canvas"></canvas>
     
@@ -990,7 +974,6 @@
               <option value="Trabajos en Acero Inox">Trabajo Inox</option>
               <option value="Servicio de Montacargas">Servicio de Montacargas</option>
               <option value="Alquiler/Venta de Andamios">Alquiler y Venta de Andamios</option>
-              <!-- Nuevas opciones agregadas -->
               <option value="Camión Grúa Telescópica">Alquiler de Camión Grúa</option>
               <option value="Venta de Perfiles">Venta de Perfiles</option>
             </select>
@@ -1085,7 +1068,6 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- Servicio 7 Agregado -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
           <h3 class="service-title">Camión Grúa Telescópica</h3>
@@ -1093,7 +1075,6 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- Servicio 8 Agregado -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-layer-group"></i></div>
           <h3 class="service-title">Venta de Perfiles</h3>
@@ -1363,7 +1344,6 @@
           </ul>
         </div>
 
-        <!-- Footer Servicios Actualizado -->
         <div class="footer-col">
           <h4>Servicios</h4>
           <ul class="footer-links">
