@@ -173,7 +173,7 @@
       padding: 5px;
     }
 
-    /* HERO SECTION CON NUEVA IMAGEN DE PORTADA */
+    /* HERO SECTION */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -392,7 +392,7 @@
       font-weight: 800;
     }
 
-    /* SERVICIOS */
+    /* SERVICIOS CON TU NUEVA IMAGEN INTEGRADA */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -409,6 +409,14 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+    }
+
+    /* Tarjeta especial que integra tu nueva imagen 'sexooo123.jpg' con un diseño superior */
+    .service-card-featured {
+      background: linear-gradient(to bottom, rgba(18, 34, 63, 0.9), rgba(11, 24, 46, 0.95)), url('sexooo123.jpg');
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(0, 210, 255, 0.3);
     }
 
     .service-card::before {
@@ -925,7 +933,7 @@
     </div>
   </header>
 
-  <!-- SECCIÓN HERO CON TU NUEVA IMAGEN DE FONDO -->
+  <!-- SECCIÓN HERO -->
   <section id="inicio" class="hero">
     <div class="container hero-grid">
       <div class="hero-text-content">
@@ -1005,6 +1013,7 @@
     </div>
   </section>
 
+  <!-- SERVICIOS CON TU NUEVA IMAGEN INTEGRADA EN LA TERCERA TARJETA (TRABAJOS EN INOX) -->
   <section id="servicios" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1027,7 +1036,8 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <div class="service-card">
+        <!-- TERCERA TARJETA MEJORADA CON TU NUEVA IMAGEN 'sexooo123.jpg' -->
+        <div class="service-card service-card-featured">
           <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
           <h3 class="service-title">Trabajos en Inox</h3>
           <p class="service-desc">Mecanizado y soldadura TIG/MIG en acero inoxidable para sectores alimentarios, médicos e industriales de alta exigencia.</p>
