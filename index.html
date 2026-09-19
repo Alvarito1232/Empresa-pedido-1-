@@ -23,12 +23,12 @@
       --bg-dark: #0b182e;
       --bg-card: #14284d;
       --text-main: #f0f4f8;
-      --text-muted: #94a3b8;
+      --text-muted: #cbd5e1;
       --white: #ffffff;
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 24px;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       --transition: all 0.3s ease;
     }
 
@@ -392,7 +392,7 @@
       font-weight: 800;
     }
 
-    /* SERVICIOS */
+    /* SERVICIOS - TODAS LAS TARJETAS CON LA IMAGEN DE FONDO 'sexooo123.jpg' */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -400,8 +400,12 @@
     }
 
     .service-card {
-      background-color: var(--bg-card);
-      border: 1px solid rgba(0, 210, 255, 0.2);
+      /* Fondo con imagen personalizada + capa oscura elegante para visibilidad perfecta */
+      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('sexooo123.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 1px solid rgba(0, 210, 255, 0.3);
       border-radius: var(--radius-md);
       padding: 35px 25px;
       transition: var(--transition);
@@ -410,15 +414,6 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow);
-    }
-
-    /* ESTILO MEJORADO PARA LA TERCERA TARJETA (IMAGEN CLARA Y NÍTIDA) */
-    .service-card-featured {
-      background: linear-gradient(135deg, rgba(10, 22, 44, 0.85), rgba(15, 38, 77, 0.92)), url('sexooo123.jpg');
-      background-size: cover;
-      background-position: center;
-      border: 2px solid var(--cyan-accent);
-      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.25);
     }
 
     .service-card::before {
@@ -434,7 +429,7 @@
 
     .service-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0, 210, 255, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 210, 255, 0.35);
       border-color: var(--cyan-accent);
     }
 
@@ -445,7 +440,7 @@
     .service-icon {
       width: 65px;
       height: 65px;
-      background: rgba(0, 210, 255, 0.15);
+      background: rgba(0, 210, 255, 0.2);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -453,6 +448,7 @@
       font-size: 1.8rem;
       color: var(--cyan-accent);
       margin-bottom: 22px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
     .service-title {
@@ -467,6 +463,7 @@
       font-size: 0.95rem;
       margin-bottom: 20px;
       flex-grow: 1;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
     }
 
     .service-link {
@@ -1015,6 +1012,7 @@
     </div>
   </section>
 
+  <!-- SERVICIOS: TODAS LAS TARJETAS TIENEN 'sexooo123.jpg' DE FONDO -->
   <section id="servicios" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1037,8 +1035,8 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- TERCERA TARJETA: IMAGEN CLARA 'sexooo123.jpg' Y COHETE -->
-        <div class="service-card service-card-featured">
+        <!-- TERCERA TARJETA CON COHETE Y FONDO -->
+        <div class="service-card">
           <div class="service-icon"><i class="fas fa-rocket"></i></div>
           <h3 class="service-title">Trabajos en Inox</h3>
           <p class="service-desc">Mecanizado y soldadura TIG/MIG en acero inoxidable para sectores alimentarios, médicos e industriales de alta exigencia.</p>
