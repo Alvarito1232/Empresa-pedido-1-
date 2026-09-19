@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OBH Metales SAC | Estructuras Metálicas e Ingeniería</title>
-  <meta name="description" content="Especialistas en fabricación y montaje de estructuras metálicas, carpintería metálica, acero inoxidable, servicio de montacargas y alquiler/venta de andamios.">
+  <meta name="description" content="Especialistas en fabricación y montaje de estructuras metálicas, carpintería metálica, acero inoxidable, camión grúa telescópica, montacargas y venta de perfiles.">
   
   <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -168,7 +168,6 @@
       box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
     }
 
-    /* Botón Hamburguesa Móvil */
     .mobile-toggle {
       display: none;
       font-size: 1.8rem;
@@ -295,7 +294,6 @@
       background: rgba(0, 210, 255, 0.05);
     }
 
-    /* Targeta de Cotización Express */
     .hero-card-quote {
       background: rgba(18, 34, 63, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -350,7 +348,7 @@
     }
 
     /* ==========================================================================
-       ESTADÍSTICAS / MÉTRICAS
+       ESTADÍSTICAS
        ========================================================================== */
     .stats-section {
       background: var(--bg-card);
@@ -417,7 +415,7 @@
        ========================================================================== */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
 
@@ -550,7 +548,7 @@
     }
 
     /* ==========================================================================
-       GALERÍA DE PROYECTOS / PORTAFOLIO
+       GALERÍA
        ========================================================================== */
     .portfolio-filters {
       display: flex;
@@ -635,7 +633,6 @@
       margin-top: 4px;
     }
 
-    /* Lightbox Modal */
     .lightbox {
       position: fixed;
       top: 0;
@@ -670,7 +667,7 @@
     }
 
     /* ==========================================================================
-       PREGUNTAS FRECUENTES (FAQ)
+       FAQ & CONTACTO
        ========================================================================== */
     .faq-wrapper {
       max-width: 800px;
@@ -719,9 +716,6 @@
       transform: rotate(180deg);
     }
 
-    /* ==========================================================================
-       CONTACTO & UBICACIÓN
-       ========================================================================== */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -849,9 +843,6 @@
       font-size: 0.85rem;
     }
 
-    /* ==========================================================================
-       BOTÓN FLOTANTE WHATSAPP
-       ========================================================================== */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
@@ -878,36 +869,15 @@
     }
 
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
-    /* ==========================================================================
-       RESPONSIVE ADAPTACIONES (MÓVILES Y TABLETS)
-       ========================================================================== */
     @media (max-width: 992px) {
-      .hero-grid {
+      .hero-grid, .about-grid, .contact-grid, .footer-grid {
         grid-template-columns: 1fr;
         gap: 40px;
-      }
-      
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -915,7 +885,6 @@
       .mobile-toggle {
         display: block;
       }
-
       .nav-menu {
         position: fixed;
         top: 80px;
@@ -930,28 +899,19 @@
         transition: var(--transition);
         padding: 40px 20px;
       }
-
       .nav-menu.active {
         left: 0;
       }
-
       .nav-link {
         font-size: 1.2rem;
       }
-
       .section-padding {
         padding: 60px 0;
       }
-
       .hero {
         padding-top: 110px;
         padding-bottom: 50px;
       }
-
-      .hero-card-quote {
-        padding: 20px;
-      }
-
       .whatsapp-float {
         bottom: 15px;
         right: 15px;
@@ -964,7 +924,6 @@
 </head>
 <body>
 
-  <!-- HEADER / MENÚ -->
   <header>
     <div class="container nav-container">
       <a href="#" class="logo">
@@ -994,7 +953,6 @@
     </div>
   </header>
 
-  <!-- HERO SECTION -->
   <section id="inicio" class="hero">
     <canvas id="sparksCanvas" class="hero-canvas"></canvas>
     
@@ -1019,7 +977,6 @@
         </div>
       </div>
 
-      <!-- Cotizador Rápido -->
       <div class="hero-card-quote">
         <h3><i class="fas fa-calculator" style="color:var(--cyan-accent)"></i> Cotizador Express</h3>
         <p>Envíanos los detalles rápidos de tu proyecto y recibe atención prioritaria:</p>
@@ -1033,6 +990,9 @@
               <option value="Trabajos en Acero Inox">Trabajo Inox</option>
               <option value="Servicio de Montacargas">Servicio de Montacargas</option>
               <option value="Alquiler/Venta de Andamios">Alquiler y Venta de Andamios</option>
+              <!-- Nuevas opciones agregadas -->
+              <option value="Camión Grúa Telescópica">Alquiler de Camión Grúa</option>
+              <option value="Venta de Perfiles">Venta de Perfiles</option>
             </select>
           </div>
 
@@ -1054,7 +1014,6 @@
     </div>
   </section>
 
-  <!-- MÉTRICAS -->
   <section class="stats-section">
     <div class="container stats-grid">
       <div>
@@ -1076,7 +1035,6 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
   <section id="servicios" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1085,7 +1043,6 @@
       </div>
 
       <div class="services-grid">
-        <!-- Servicio 1 -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-building"></i></div>
           <h3 class="service-title">Estructuras Metálicas</h3>
@@ -1093,7 +1050,6 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- Servicio 2 -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-tools"></i></div>
           <h3 class="service-title">Carpintería Metálica</h3>
@@ -1101,7 +1057,6 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- Servicio 3 -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
           <h3 class="service-title">Trabajos en Inox</h3>
@@ -1109,7 +1064,6 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- Servicio 4 -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-truck-loading"></i></div>
           <h3 class="service-title">Servicio de Montacargas</h3>
@@ -1117,7 +1071,6 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- Servicio 5 -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-cubes"></i></div>
           <h3 class="service-title">Alquiler y Venta de Andamios</h3>
@@ -1125,18 +1078,32 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- Servicio 6 -->
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
           <h3 class="service-title">Ingeniería y Proyectos</h3>
           <p class="service-desc">Asesoría técnica integral, desarrollo de planos, memorias descriptivas y supervisión de obras metalmecánicas.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
+
+        <!-- Servicio 7 Agregado -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
+          <h3 class="service-title">Camión Grúa Telescópica</h3>
+          <p class="service-desc">Alquiler de camiones grúa telescópica para maniobras, izaje y traslado de cargas pesadas con máxima seguridad.</p>
+          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Servicio 8 Agregado -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+          <h3 class="service-title">Venta de Perfiles</h3>
+          <p class="service-desc">Comercialización de perfiles metálicos estructurales (vigas, canales, ángulos, tubos) a medida para todos tus proyectos.</p>
+          <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- NOSOTROS -->
   <section id="nosotros" class="section-padding" style="background: var(--bg-card);">
     <div class="container about-grid">
       <div class="about-image-wrapper">
@@ -1179,7 +1146,6 @@
     </div>
   </section>
 
-  <!-- PROYECTOS / GALERÍA -->
   <section id="proyectos" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1195,7 +1161,6 @@
       </div>
 
       <div class="portfolio-grid">
-        <!-- Proyecto 1 -->
         <div class="portfolio-item" data-category="estructuras">
           <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Nave Industrial Metálica">
           <div class="portfolio-overlay">
@@ -1204,7 +1169,6 @@
           </div>
         </div>
 
-        <!-- Proyecto 2 -->
         <div class="portfolio-item" data-category="estructuras">
           <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Techo Parabólico">
           <div class="portfolio-overlay">
@@ -1213,7 +1177,6 @@
           </div>
         </div>
 
-        <!-- Proyecto 3 -->
         <div class="portfolio-item" data-category="carpinteria">
           <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Portón Industrial">
           <div class="portfolio-overlay">
@@ -1222,7 +1185,6 @@
           </div>
         </div>
 
-        <!-- Proyecto 4 -->
         <div class="portfolio-item" data-category="inox">
           <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Barandas de Acero Inox">
           <div class="portfolio-overlay">
@@ -1231,7 +1193,6 @@
           </div>
         </div>
 
-        <!-- Proyecto 5 -->
         <div class="portfolio-item" data-category="estructuras">
           <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Escalera de Emergencia">
           <div class="portfolio-overlay">
@@ -1240,7 +1201,6 @@
           </div>
         </div>
 
-        <!-- Proyecto 6 -->
         <div class="portfolio-item" data-category="carpinteria">
           <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=800&q=80" alt="Estructuras de Soporte">
           <div class="portfolio-overlay">
@@ -1252,13 +1212,11 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX PARA VER FOTOS -->
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
     <img class="lightbox-content" id="lightboxImg" src="" alt="Vista ampliada">
   </div>
 
-  <!-- FAQ PREGUNTAS FRECUENTES -->
   <section id="faq" class="section-padding" style="background: var(--bg-card);">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1310,7 +1268,6 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contacto" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1321,7 +1278,6 @@
       <div class="contact-grid">
         <div class="contact-info-card">
           <h3 style="margin-bottom: 25px; font-size: 1.4rem;">Información Corporativa</h3>
-
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
             <div class="contact-details">
@@ -1329,7 +1285,6 @@
               <a href="https://wa.me/51901538435" target="_blank">901 538 435</a>
             </div>
           </div>
-
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-globe"></i></div>
             <div class="contact-details">
@@ -1337,7 +1292,6 @@
               <p>www.obhmetales.com</p>
             </div>
           </div>
-
           <div class="contact-item">
             <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
             <div class="contact-details">
@@ -1345,7 +1299,6 @@
               <p>OBH METALES SAC</p>
             </div>
           </div>
-
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div class="contact-details">
@@ -1353,7 +1306,6 @@
               <p>Servicio y Cobertura a Nivel Nacional</p>
             </div>
           </div>
-
           <div class="social-links">
             <a href="https://facebook.com" class="social-btn" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://tiktok.com" class="social-btn" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -1385,7 +1337,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -1412,13 +1363,15 @@
           </ul>
         </div>
 
+        <!-- Footer Servicios Actualizado -->
         <div class="footer-col">
           <h4>Servicios</h4>
           <ul class="footer-links">
             <li><a href="#servicios">Estructuras Metálicas</a></li>
             <li><a href="#servicios">Carpintería Metálica</a></li>
             <li><a href="#servicios">Trabajos Inox</a></li>
-            <li><a href="#servicios">Montacargas y Andamios</a></li>
+            <li><a href="#servicios">Grúa y Andamios</a></li>
+            <li><a href="#servicios">Venta de Perfiles</a></li>
           </ul>
         </div>
       </div>
@@ -1429,17 +1382,13 @@
     </div>
   </footer>
 
-  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
   <a href="https://wa.me/51901538435?text=Hola!%20Vengo%20de%20la%20página%20web%20y%20deseo%20mayor%20información." class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- SCRIPTS JAVASCRIPT -->
   <script>
-    // Año dinámico en footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // Menú Hamburguesa Móvil
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -1455,7 +1404,6 @@
       }
     });
 
-    // Cerrar menú móvil al hacer clic en un enlace
     document.querySelectorAll('.nav-link, .btn-contact-header').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -1467,7 +1415,6 @@
       });
     });
 
-    // FAQ Acordeón
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
       const question = item.querySelector('.faq-question');
@@ -1480,7 +1427,6 @@
       });
     });
 
-    // Filtros de Galería
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -1501,7 +1447,6 @@
       });
     });
 
-    // Lightbox para imágenes
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
@@ -1524,7 +1469,6 @@
       }
     });
 
-    // Enviar Cotizador Express por WhatsApp
     document.getElementById('expressQuoteForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const service = document.getElementById('quoteService').value;
@@ -1535,7 +1479,6 @@
       window.open(`https://wa.me/51901538435?text=${message}`, '_blank');
     });
 
-    // Enviar Formulario Principal por WhatsApp
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('contactName').value;
@@ -1546,7 +1489,6 @@
       window.open(`https://wa.me/51901538435?text=${message}`, '_blank');
     });
 
-    // Animación del Canvas de Chispas en Hero
     const canvas = document.getElementById('sparksCanvas');
     const ctx = canvas.getContext('2d');
 
