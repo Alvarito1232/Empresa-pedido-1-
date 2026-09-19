@@ -21,7 +21,7 @@
       --cyan-accent: #00d2ff;
       --yellow-steel: #ffaa00;
       --bg-dark: #0b182e;
-      --bg-card: #12223f;
+      --bg-card: #14284d; /* Fondo de tarjeta más claro y visible */
       --text-main: #f0f4f8;
       --text-muted: #94a3b8;
       --white: #ffffff;
@@ -392,7 +392,7 @@
       font-weight: 800;
     }
 
-    /* SERVICIOS CON TU NUEVA IMAGEN INTEGRADA */
+    /* SERVICIOS - TARJETAS NÍTIDAS Y VISIBLES CON TU IMAGEN EN LA TERCERA */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -400,8 +400,8 @@
     }
 
     .service-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      background-color: var(--bg-card);
+      border: 1px solid rgba(0, 210, 255, 0.2);
       border-radius: var(--radius-md);
       padding: 35px 25px;
       transition: var(--transition);
@@ -409,14 +409,15 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      box-shadow: var(--shadow);
     }
 
-    /* Tarjeta especial que integra tu nueva imagen 'sexooo123.jpg' con un diseño superior */
+    /* Estilo mejorado para la tercera tarjeta integrando la imagen y el cohete */
     .service-card-featured {
-      background: linear-gradient(to bottom, rgba(18, 34, 63, 0.9), rgba(11, 24, 46, 0.95)), url('sexooo123.jpg');
+      background: linear-gradient(135deg, rgba(20, 40, 77, 0.95), rgba(11, 24, 46, 0.98)), url('sexooo123.jpg');
       background-size: cover;
       background-position: center;
-      border: 1px solid rgba(0, 210, 255, 0.3);
+      border: 2px solid var(--cyan-accent);
     }
 
     .service-card::before {
@@ -432,8 +433,8 @@
 
     .service-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-      border-color: rgba(0, 210, 255, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 210, 255, 0.2);
+      border-color: var(--cyan-accent);
     }
 
     .service-card:hover::before {
@@ -443,7 +444,7 @@
     .service-icon {
       width: 65px;
       height: 65px;
-      background: rgba(27, 99, 198, 0.15);
+      background: rgba(0, 210, 255, 0.15);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -457,6 +458,7 @@
       font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 12px;
+      color: var(--white);
     }
 
     .service-desc {
@@ -1013,7 +1015,7 @@
     </div>
   </section>
 
-  <!-- SERVICIOS CON TU NUEVA IMAGEN INTEGRADA EN LA TERCERA TARJETA (TRABAJOS EN INOX) -->
+  <!-- SERVICIOS CON TARJETAS VISIBLES Y COHETE EN LA TERCERA -->
   <section id="servicios" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1036,9 +1038,9 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- TERCERA TARJETA MEJORADA CON TU NUEVA IMAGEN 'sexooo123.jpg' -->
+        <!-- TERCERA TARJETA CON FONDO, IMAGEN 'sexooo123.jpg' Y COHETE -->
         <div class="service-card service-card-featured">
-          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="service-icon"><i class="fas fa-rocket"></i></div>
           <h3 class="service-title">Trabajos en Inox</h3>
           <p class="service-desc">Mecanizado y soldadura TIG/MIG en acero inoxidable para sectores alimentarios, médicos e industriales de alta exigencia.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
