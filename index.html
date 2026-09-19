@@ -40,6 +40,7 @@
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
+      user-select: none; /* Protección contra selección de texto */
     }
 
     body {
@@ -63,6 +64,7 @@
       max-width: 100%;
       height: auto;
       display: block;
+      pointer-events: none; /* Evita arrastrar o guardar imágenes fácilmente */
     }
 
     .container {
@@ -315,6 +317,36 @@
       font-size: 0.85rem;
       color: var(--text-muted);
       margin-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      background: rgba(7, 19, 41, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-sm);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--cyan-accent);
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
     }
 
     /* ESTADÍSTICAS */
@@ -571,7 +603,7 @@
       color: var(--text-muted);
     }
 
-    /* SECCIÓN NUEVA: POR QUÉ ELEGIRNOS / QUÉ LO DIFERENCIA */
+    /* SECCIÓN NUEVA: POR QUÉ ELEGIRNOS / LO QUE NOS DIFERENCIA */
     .diff-section {
       background: linear-gradient(135deg, rgba(15, 38, 77, 0.4), rgba(7, 19, 41, 0.8));
       border: 1px solid rgba(0, 210, 255, 0.2);
@@ -1441,7 +1473,7 @@
     </div>
   </section>
 
-  <!-- GALERÍA DE PROYECTOS -->
+  <!-- GALERÍA DE PROYECTOS AMPLIADA CON TODAS LAS NUEVAS IMÁGENES -->
   <section id="proyectos" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1458,7 +1490,7 @@
 
       <div class="portfolio-grid">
         <div class="portfolio-item" data-category="estructuras">
-          <img src="be0081ff-7d60-4d68-a379-0396ee2934b6.jpg" alt="Proyecto 1">
+          <img src="be0081ff-7d60-4d68-a379-0396ee2934b6.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Estructuras Metálicas</span>
             <h4 class="portfolio-title">Montaje de Estructura Industrial</h4>
@@ -1466,7 +1498,7 @@
         </div>
 
         <div class="portfolio-item" data-category="taller">
-          <img src="a54bac98-df5f-4073-b0a8-5e6e00ffcce2.jpg" alt="Proyecto 2">
+          <img src="a54bac98-df5f-4073-b0a8-5e6e00ffcce2.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Taller y Soldadura</span>
             <h4 class="portfolio-title">Trabajos Especializados en Acero</h4>
@@ -1474,66 +1506,139 @@
         </div>
 
         <div class="portfolio-item" data-category="estructuras">
-          <img src="c030d4ac-6e77-43bf-b2ff-4b2e14e133fe.jpg" alt="Proyecto 3">
+          <img src="c030d4ac-6e77-43bf-b2ff-4b2e14e133fe.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Estructuras Metálicas</span>
             <h4 class="portfolio-title">Instalación y Coberturas</h4>
           </div>
         </div>
 
+        <!-- Nuevas imágenes añadidas a la galería -->
         <div class="portfolio-item" data-category="taller">
-          <img src="9fab36c6-0ac6-4e69-b065-7daaab1bbe2b.jpg" alt="Proyecto 4">
+          <img src="d13b0d3e-a960-4609-8a5b-6110e66c3015.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Taller y Soldadura</span>
-            <h4 class="portfolio-title">Fabricación en Planta</h4>
+            <h4 class="portfolio-title">Proceso de Soldadura Avanzada</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="estructuras">
+          <img src="ef66c6c3-d8ae-4238-8ec4-cd8cde4922d6.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Estructuras Metálicas</span>
+            <h4 class="portfolio-title">Montaje Estructural en Obra</h4>
           </div>
         </div>
 
         <div class="portfolio-item" data-category="ingenieria">
-          <img src="99046d60-3cc1-4997-8c53-70ef842e7ea6.jpg" alt="Proyecto 5">
+          <img src="a8018637-9e7f-4ff4-81d5-8448b0442429.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Ingeniería</span>
-            <h4 class="portfolio-title">Diseño y Planificación</h4>
-          </div>
-        </div>
-
-        <div class="portfolio-item" data-category="estructuras">
-          <img src="e3c8d922-58f8-4dc6-8dc2-c77ef592db34.jpg" alt="Proyecto 6">
-          <div class="portfolio-overlay">
-            <span class="portfolio-category">Estructuras Metálicas</span>
-            <h4 class="portfolio-title">Estructuras de Gran Envergadura</h4>
+            <h4 class="portfolio-title">Diseño Técnico y Metálico</h4>
           </div>
         </div>
 
         <div class="portfolio-item" data-category="taller">
-          <img src="a73c7c4c-27fd-48eb-b9e6-f25a455bf616.jpg" alt="Proyecto 7">
+          <img src="a48e0a1a-0b09-46fb-856d-e611cff6b88e.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Taller y Soldadura</span>
-            <h4 class="portfolio-title">Acabados y Control de Calidad</h4>
+            <h4 class="portfolio-title">Fabricación de Componentes</h4>
           </div>
         </div>
 
         <div class="portfolio-item" data-category="estructuras">
-          <img src="9dd16691-4908-4cdd-baa1-e8944b6c4f37.jpg" alt="Proyecto 8">
+          <img src="38858340-e42b-45f3-aa8c-2f27259733fc.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Estructuras Metálicas</span>
-            <h4 class="portfolio-title">Montaje en Altura</h4>
+            <h4 class="portfolio-title">Estructuras Pesadas Industriales</h4>
           </div>
         </div>
 
         <div class="portfolio-item" data-category="ingenieria">
-          <img src="5ce2b3a3-bfbc-488e-b387-872c87ff81c7.jpg" alt="Proyecto 9">
+          <img src="457158bd-83db-4205-bd6f-8303389db4f3.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Ingeniería</span>
-            <h4 class="portfolio-title">Supervisión y Planos Técnicos</h4>
+            <h4 class="portfolio-title">Supervisión y Estándares</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="taller">
+          <img src="350a3af7-c9fc-4394-a96d-ab5646e50c68.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Taller y Soldadura</span>
+            <h4 class="portfolio-title">Acabados Metálicos de Precisión</h4>
           </div>
         </div>
 
         <div class="portfolio-item" data-category="estructuras">
-          <img src="7e59e17a-cf9f-470a-be28-549a67e120d9.jpg" alt="Proyecto 10">
+          <img src="53ed9047-b324-4ea7-9dd6-071250534007.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
             <span class="portfolio-category">Estructuras Metálicas</span>
-            <h4 class="portfolio-title">Obras Metalmecánicas Finalizadas</h4>
+            <h4 class="portfolio-title">Desarrollo de Coberturas</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="ingenieria">
+          <img src="ea86da0c-5293-4afa-b33e-8b9308ec937d.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Ingeniería</span>
+            <h4 class="portfolio-title">Planificación y Logística</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="taller">
+          <img src="a65b2563-b611-44ca-9e2d-db15c7e69502.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Taller y Soldadura</span>
+            <h4 class="portfolio-title">Armado de Estructuras en Planta</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="estructuras">
+          <img src="c4c7d563-4587-4895-888f-3114b29437f3.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Estructuras Metálicas</span>
+            <h4 class="portfolio-title">Soluciones para la Industria</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="ingenieria">
+          <img src="3ca5042e-aa4f-4bfc-8781-23e081669518.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Ingeniería</span>
+            <h4 class="portfolio-title">Evaluación Técnica y de Cargas</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="taller">
+          <img src="00fd2fff-5065-46aa-916f-e196a31a7e56.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Taller y Soldadura</span>
+            <h4 class="portfolio-title">Soldadura Certificada MIG/TIG</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="estructuras">
+          <img src="0538bfb0-5967-41ad-b98e-c0649fe516d8.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Estructuras Metálicas</span>
+            <h4 class="portfolio-title">Montaje y Maniobras de Izaje</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="taller">
+          <img src="9fab36c6-0ac6-4e69-b065-7daaab1bbe2b.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Taller y Soldadura</span>
+            <h4 class="portfolio-title">Fabricación y Estándares</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="ingenieria">
+          <img src="30cfc038-155d-43d7-9532-efa2b3ead9fe.jpg" alt="Proyecto">
+          <div class="portfolio-overlay">
+            <span class="portfolio-category">Ingeniería</span>
+            <h4 class="portfolio-title">Coordinación de Proyectos</h4>
           </div>
         </div>
       </div>
@@ -1723,6 +1828,23 @@
   </div>
 
   <script>
+    /* SCRIPT DE SEGURIDAD ANTINSPECCIÓN Y BLOQUEO DE CÓDIGO */
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault(); // Bloquea el clic derecho
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // Bloquea F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+      if (
+        e.keyCode === 123 || 
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
+        (e.ctrlKey && e.keyCode === 85)
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
     const mobileToggle = document.getElementById('mobileToggle');
