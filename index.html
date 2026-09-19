@@ -40,7 +40,7 @@
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
-      user-select: none; /* Protección contra selección de texto */
+      user-select: none;
     }
 
     body {
@@ -64,7 +64,7 @@
       max-width: 100%;
       height: auto;
       display: block;
-      pointer-events: none; /* Evita arrastrar o guardar imágenes fácilmente */
+      pointer-events: none;
     }
 
     .container {
@@ -287,40 +287,43 @@
       background: rgba(0, 210, 255, 0.05);
     }
 
+    /* MEJORA ESTÉTICA DE LA TARJETA / COTIZADOR EXPRESS (IMAGEN EN BANNER HORIZONTAL PERFECTO) */
     .hero-card-quote {
-      background: rgba(18, 34, 63, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(14, 28, 54, 0.92);
+      border: 1px solid rgba(0, 210, 255, 0.25);
       backdrop-filter: blur(20px);
-      padding: 25px;
+      padding: 30px;
       border-radius: var(--radius-md);
       box-shadow: var(--shadow);
       text-align: center;
     }
 
-    .hero-logo-display {
+    .hero-logo-banner {
       width: 100%;
-      max-height: 220px;
-      object-fit: contain;
+      height: 140px;
+      object-fit: cover;
+      object-position: center;
       border-radius: var(--radius-sm);
-      margin-bottom: 15px;
-      border: 1px solid rgba(0, 210, 255, 0.3);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+      border: 1px solid rgba(0, 210, 255, 0.4);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.6);
     }
 
     .hero-card-quote h3 {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       margin-bottom: 8px;
       color: var(--white);
+      font-weight: 800;
     }
 
     .hero-card-quote p {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
     .form-group label {
@@ -334,7 +337,7 @@
     .form-control {
       width: 100%;
       padding: 12px 15px;
-      background: rgba(7, 19, 41, 0.8);
+      background: rgba(7, 19, 41, 0.9);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: var(--radius-sm);
       color: var(--white);
@@ -1219,9 +1222,9 @@
         </div>
       </div>
 
-      <!-- LOGOTIPO CORPORATIVO DESTACADO EN EL INICIO + COTIZADOR EXPRESS -->
+      <!-- LOGOTIPO CORPORATIVO EN BANNER HORIZONTAL PERFECTO + COTIZADOR EXPRESS -->
       <div class="hero-card-quote">
-        <img src="logo 1.jpg" alt="OBH Metales SAC Logo Corporativo" class="hero-logo-display">
+        <img src="logo 1.jpg" alt="OBH Metales SAC Logo Banner" class="hero-logo-banner">
         <h3>Cotizador Express</h3>
         <p>Selecciona tu servicio y recibe atención prioritaria:</p>
         
@@ -1473,7 +1476,7 @@
     </div>
   </section>
 
-  <!-- GALERÍA DE PROYECTOS AMPLIADA CON TODAS LAS NUEVAS IMÁGENES -->
+  <!-- GALERÍA DE PROYECTOS AMPLIADA -->
   <section id="proyectos" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1513,7 +1516,6 @@
           </div>
         </div>
 
-        <!-- Nuevas imágenes añadidas a la galería -->
         <div class="portfolio-item" data-category="taller">
           <img src="d13b0d3e-a960-4609-8a5b-6110e66c3015.jpg" alt="Proyecto">
           <div class="portfolio-overlay">
@@ -1830,11 +1832,10 @@
   <script>
     /* SCRIPT DE SEGURIDAD ANTINSPECCIÓN Y BLOQUEO DE CÓDIGO */
     document.addEventListener('contextmenu', function(e) {
-      e.preventDefault(); // Bloquea el clic derecho
+      e.preventDefault();
     });
 
     document.addEventListener('keydown', function(e) {
-      // Bloquea F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
       if (
         e.keyCode === 123 || 
         (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || 
