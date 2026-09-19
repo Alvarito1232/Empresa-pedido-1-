@@ -398,7 +398,7 @@
       font-weight: 800;
     }
 
-    /* SERVICIOS - TARJETAS CON FONDO 'sexooo123.jpg' */
+    /* SERVICIOS - TARJETAS CON FONDO ESPECÍFICO */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -406,7 +406,6 @@
     }
 
     .service-card {
-      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('sexooo123.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -421,6 +420,36 @@
       box-shadow: var(--shadow);
     }
 
+    /* Fondos específicos y personalizados para cada tarjeta de servicio */
+    .service-card.s-estructuras {
+      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('estructuras metalicas cuadrado.jpg');
+      background-size: cover; background-position: center;
+    }
+    .service-card.s-carpinteria {
+      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('carpinteria metalica.jpg');
+      background-size: cover; background-position: center;
+    }
+    .service-card.s-inox {
+      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('trabajo en inox.jpg');
+      background-size: cover; background-position: center;
+    }
+    .service-card.s-montacargas {
+      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('montacargas.jpg');
+      background-size: cover; background-position: center;
+    }
+    .service-card.s-andamios {
+      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('andamios.jpg');
+      background-size: cover; background-position: center;
+    }
+    .service-card.s-ingenieria {
+      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('ingeneria.jpg');
+      background-size: cover; background-position: center;
+    }
+    .service-card.s-grua {
+      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('gruia-telescopica-MANITEX2.jpg');
+      background-size: cover; background-position: center;
+    }
+
     .service-card::before {
       content: '';
       position: absolute;
@@ -430,6 +459,12 @@
       height: 0%;
       background: var(--cyan-accent);
       transition: var(--transition);
+      z-index: 1;
+    }
+
+    .service-card > * {
+      position: relative;
+      z-index: 2;
     }
 
     .service-card:hover {
@@ -1065,49 +1100,49 @@
       </div>
 
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card s-estructuras">
           <div class="service-icon"><i class="fas fa-building"></i></div>
           <h3 class="service-title">Estructuras Metálicas</h3>
           <p class="service-desc">Fabricación y montaje de naves industriales, techos parabólicos, tijerales, coberturas ligeras y pesadas con cálculo de ingeniería.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <div class="service-card">
+        <div class="service-card s-carpinteria">
           <div class="service-icon"><i class="fas fa-tools"></i></div>
           <h3 class="service-title">Carpintería Metálica</h3>
           <p class="service-desc">Diseño y fabricación de puertas industriales, portones apanados, barandas, escaleras de emergencia, rejas y cerramientos metálicos.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <div class="service-card">
+        <div class="service-card s-inox">
           <div class="service-icon"><i class="fas fa-rocket"></i></div>
           <h3 class="service-title">Trabajos en Inox</h3>
           <p class="service-desc">Mecanizado y soldadura TIG/MIG en acero inoxidable para sectores alimentarios, médicos e industriales de alta exigencia.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <div class="service-card">
+        <div class="service-card s-montacargas">
           <div class="service-icon"><i class="fas fa-truck-loading"></i></div>
           <h3 class="service-title">Servicio de Montacargas</h3>
           <p class="service-desc">Alquiler y maniobras con equipos de elevación y montacargas de alta capacidad con operadores certificados.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <div class="service-card">
+        <div class="service-card s-andamios">
           <div class="service-icon"><i class="fas fa-cubes"></i></div>
           <h3 class="service-title">Alquiler y Venta de Andamios</h3>
           <p class="service-desc">Andamios normados para trabajos en altura, multidireccionales y acoples con estándares de seguridad garantizados.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <div class="service-card">
+        <div class="service-card s-ingenieria">
           <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
           <h3 class="service-title">Ingeniería y Proyectos</h3>
           <p class="service-desc">Asesoría técnica integral, desarrollo de planos, memorias descriptivas y supervisión de obras metalmecánicas.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <div class="service-card">
+        <div class="service-card s-grua">
           <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
           <h3 class="service-title">Camión Grúa Telescópica</h3>
           <p class="service-desc">Alquiler de camiones grúa telescópica para maniobras, izaje y traslado de cargas pesadas con máxima seguridad.</p>
@@ -1546,4 +1581,3 @@
   </script>
 </body>
 </html>
-
