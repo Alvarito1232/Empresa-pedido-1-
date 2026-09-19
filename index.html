@@ -287,7 +287,7 @@
       background: rgba(0, 210, 255, 0.05);
     }
 
-    /* MEJORA ESTÉTICA DE LA TARJETA / COTIZADOR EXPRESS (IMAGEN EN BANNER HORIZONTAL PERFECTO) */
+    /* COTIZADOR EXPRESS CON BANNER HORIZONTAL PERFECTO */
     .hero-card-quote {
       background: rgba(14, 28, 54, 0.92);
       border: 1px solid rgba(0, 210, 255, 0.25);
@@ -412,7 +412,7 @@
       font-weight: 800;
     }
 
-    /* SERVICIOS - TARJETAS CON FONDO ESPECÍFICO */
+    /* SERVICIOS */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -434,34 +434,13 @@
       box-shadow: var(--shadow);
     }
 
-    .service-card.s-estructuras {
-      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('estructuras metalicas cuadrado.jpg');
-      background-size: cover; background-position: center;
-    }
-    .service-card.s-carpinteria {
-      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('carpinteria metalica.jpg');
-      background-size: cover; background-position: center;
-    }
-    .service-card.s-inox {
-      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('trabajo en inox.jpg');
-      background-size: cover; background-position: center;
-    }
-    .service-card.s-montacargas {
-      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('montacargas.jpg');
-      background-size: cover; background-position: center;
-    }
-    .service-card.s-andamios {
-      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('andamios.jpg');
-      background-size: cover; background-position: center;
-    }
-    .service-card.s-ingenieria {
-      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('ingeneria.jpg');
-      background-size: cover; background-position: center;
-    }
-    .service-card.s-grua {
-      background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('gruia-telescopica-MANITEX2.jpg');
-      background-size: cover; background-position: center;
-    }
+    .service-card.s-estructuras { background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('estructuras metalicas cuadrado.jpg'); background-size: cover; background-position: center; }
+    .service-card.s-carpinteria { background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('carpinteria metalica.jpg'); background-size: cover; background-position: center; }
+    .service-card.s-inox { background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('trabajo en inox.jpg'); background-size: cover; background-position: center; }
+    .service-card.s-montacargas { background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('montacargas.jpg'); background-size: cover; background-position: center; }
+    .service-card.s-andamios { background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('andamios.jpg'); background-size: cover; background-position: center; }
+    .service-card.s-ingenieria { background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('ingeneria.jpg'); background-size: cover; background-position: center; }
+    .service-card.s-grua { background: linear-gradient(135deg, rgba(8, 20, 42, 0.88), rgba(15, 38, 77, 0.92)), url('gruia-telescopica-MANITEX2.jpg'); background-size: cover; background-position: center; }
 
     .service-card::before {
       content: '';
@@ -528,7 +507,7 @@
       gap: 8px;
     }
 
-    /* SECCIÓN NOSOTROS - MISIÓN Y VISIÓN */
+    /* SECCIÓN NOSOTROS */
     .about-main-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -606,7 +585,7 @@
       color: var(--text-muted);
     }
 
-    /* SECCIÓN NUEVA: POR QUÉ ELEGIRNOS / LO QUE NOS DIFERENCIA */
+    /* POR QUÉ ELEGIRNOS */
     .diff-section {
       background: linear-gradient(135deg, rgba(15, 38, 77, 0.4), rgba(7, 19, 41, 0.8));
       border: 1px solid rgba(0, 210, 255, 0.2);
@@ -692,7 +671,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* SECCIÓN DE VALORES */
+    /* VALORES */
     .values-section-title {
       text-align: center;
       margin-bottom: 35px;
@@ -757,7 +736,7 @@
       color: var(--text-muted);
     }
 
-    /* GALERÍA */
+    /* GALERÍA CORREGIDA Y SIN ESPACIOS VACÍOS */
     .portfolio-filters {
       display: flex;
       justify-content: center;
@@ -796,6 +775,8 @@
       overflow: hidden;
       height: 280px;
       cursor: pointer;
+      background: var(--bg-card);
+      border: 1px solid rgba(0, 210, 255, 0.2);
     }
 
     .portfolio-item img {
@@ -839,6 +820,7 @@
       font-size: 1.2rem;
       font-weight: 700;
       margin-top: 4px;
+      color: var(--white);
     }
 
     .lightbox {
@@ -955,34 +937,13 @@
       flex-shrink: 0;
     }
 
-    .contact-icon.whatsapp {
-      background: rgba(37, 211, 102, 0.15);
-      color: #25d366;
-    }
+    .contact-icon.whatsapp { background: rgba(37, 211, 102, 0.15); color: #25d366; }
+    .contact-icon.tiktok { background: rgba(255, 255, 255, 0.1); color: #ffffff; }
+    .contact-icon.facebook { background: rgba(24, 119, 242, 0.2); color: #1877f2; }
 
-    .contact-icon.tiktok {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
-    }
-
-    .contact-icon.facebook {
-      background: rgba(24, 119, 242, 0.2);
-      color: #1877f2;
-    }
-
-    .contact-details h4 {
-      font-size: 1.05rem;
-      margin-bottom: 4px;
-    }
-
-    .contact-details p, .contact-details a {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .contact-details a:hover {
-      color: var(--cyan-accent);
-    }
+    .contact-details h4 { font-size: 1.05rem; margin-bottom: 4px; }
+    .contact-details p, .contact-details a { color: var(--text-muted); font-size: 0.95rem; }
+    .contact-details a:hover { color: var(--cyan-accent); }
 
     .social-links {
       display: flex;
@@ -1009,7 +970,7 @@
       transform: translateY(-3px);
     }
 
-    /* BOTONES FLOTANTES MÚLTIPLES */
+    /* BOTONES FLOTANTES */
     .floating-social-container {
       position: fixed;
       bottom: 25px;
@@ -1034,27 +995,10 @@
       transition: var(--transition);
     }
 
-    .float-btn:hover {
-      transform: scale(1.1);
-    }
-
-    .float-whatsapp {
-      background-color: #25d366;
-      width: 62px;
-      height: 62px;
-      font-size: 32px;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-      animation: pulse 2s infinite;
-    }
-
-    .float-tiktok {
-      background-color: #000000;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .float-facebook {
-      background-color: #1877f2;
-    }
+    .float-btn:hover { transform: scale(1.1); }
+    .float-whatsapp { background-color: #25d366; width: 62px; height: 62px; font-size: 32px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); animation: pulse 2s infinite; }
+    .float-tiktok { background-color: #000000; border: 1px solid rgba(255, 255, 255, 0.2); }
+    .float-facebook { background-color: #1877f2; }
 
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
@@ -1077,58 +1021,21 @@
       margin-bottom: 50px;
     }
 
-    .footer-col p {
-      color: var(--text-muted);
-      margin-top: 15px;
-      max-width: 350px;
-    }
-
-    .footer-col h4 {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: var(--white);
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: var(--cyan-accent);
-      padding-left: 5px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 25px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
+    .footer-col p { color: var(--text-muted); margin-top: 15px; max-width: 350px; }
+    .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--white); }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { color: var(--text-muted); transition: var(--transition); }
+    .footer-links a:hover { color: var(--cyan-accent); padding-left: 5px; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 25px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
 
     @media (max-width: 992px) {
-      .hero-grid, .about-main-grid, .contact-grid, .footer-grid, .mission-vision-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .diff-section {
-        padding: 40px 20px;
-      }
+      .hero-grid, .about-main-grid, .contact-grid, .footer-grid, .mission-vision-grid { grid-template-columns: 1fr; gap: 40px; }
+      .diff-section { padding: 40px 20px; }
     }
 
     @media (max-width: 768px) {
-      .mobile-toggle {
-        display: block;
-      }
+      .mobile-toggle { display: block; }
       .nav-menu {
         position: fixed;
         top: 80px;
@@ -1143,33 +1050,13 @@
         transition: var(--transition);
         padding: 40px 20px;
       }
-      .nav-menu.active {
-        left: 0;
-      }
-      .nav-link {
-        font-size: 1.2rem;
-      }
-      .section-padding {
-        padding: 60px 0;
-      }
-      .hero {
-        padding-top: 110px;
-        padding-bottom: 50px;
-      }
-      .floating-social-container {
-        bottom: 15px;
-        right: 15px;
-      }
-      .float-whatsapp {
-        width: 55px;
-        height: 55px;
-        font-size: 28px;
-      }
-      .float-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-      }
+      .nav-menu.active { left: 0; }
+      .nav-link { font-size: 1.2rem; }
+      .section-padding { padding: 60px 0; }
+      .hero { padding-top: 110px; padding-bottom: 50px; }
+      .floating-social-container { bottom: 15px; right: 15px; }
+      .float-whatsapp { width: 55px; height: 55px; font-size: 28px; }
+      .float-btn { width: 45px; height: 45px; font-size: 20px; }
     }
   </style>
 </head>
@@ -1179,10 +1066,7 @@
     <div class="container nav-container">
       <a href="#" class="logo">
         <img src="logo 1.jpg" alt="Logo OBH Metales" class="logo-img">
-        <div class="logo-text">
-          OBH METALES
-          <span>METALES SAC</span>
-        </div>
+        <div class="logo-text">OBH METALES<span>METALES SAC</span></div>
       </a>
 
       <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
@@ -1222,7 +1106,7 @@
         </div>
       </div>
 
-      <!-- LOGOTIPO CORPORATIVO EN BANNER HORIZONTAL PERFECTO + COTIZADOR EXPRESS -->
+      <!-- COTIZADOR EXPRESS CON LOGOTIPO EN BANNER HORIZONTAL -->
       <div class="hero-card-quote">
         <img src="logo 1.jpg" alt="OBH Metales SAC Logo Banner" class="hero-logo-banner">
         <h3>Cotizador Express</h3>
@@ -1262,19 +1146,19 @@
   <section class="stats-section">
     <div class="container stats-grid">
       <div>
-        <div class="stat-number" data-target="150">+150</div>
+        <div class="stat-number">+150</div>
         <div class="stat-label">Proyectos Completados</div>
       </div>
       <div>
-        <div class="stat-number" data-target="100">100%</div>
+        <div class="stat-number">100%</div>
         <div class="stat-label">Garantía en Estructuras</div>
       </div>
       <div>
-        <div class="stat-number" data-target="12">+12</div>
+        <div class="stat-number">+12</div>
         <div class="stat-label">Años de Experiencia</div>
       </div>
       <div>
-        <div class="stat-number" data-target="24">24/7</div>
+        <div class="stat-number">24/7</div>
         <div class="stat-label">Soporte y Asesoría</div>
       </div>
     </div>
@@ -1292,21 +1176,21 @@
         <div class="service-card s-estructuras">
           <div class="service-icon"><i class="fas fa-building"></i></div>
           <h3 class="service-title">Estructuras Metálicas</h3>
-          <p class="service-desc">Fabricación y montaje de naves industriales, techos parabólicos, tijerales, coberturas ligeras y pesadas con cálculo de ingeniería.</p>
+          <p class="service-desc">Fabricación y montaje de naves industriales, techos parabólicos, tijerales y coberturas ligeras o pesadas.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
         <div class="service-card s-carpinteria">
           <div class="service-icon"><i class="fas fa-tools"></i></div>
           <h3 class="service-title">Carpintería Metálica</h3>
-          <p class="service-desc">Diseño y fabricación de puertas industriales, portones apanados, barandas, escaleras de emergencia, rejas y cerramientos metálicos.</p>
+          <p class="service-desc">Diseño y fabricación de puertas industriales, portones apanados, barandas, escaleras de emergencia y rejas.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
         <div class="service-card s-inox">
           <div class="service-icon"><i class="fas fa-rocket"></i></div>
           <h3 class="service-title">Trabajos en Inox</h3>
-          <p class="service-desc">Mecanizado y soldadura TIG/MIG en acero inoxidable para sectores alimentarios, médicos e industriales de alta exigencia.</p>
+          <p class="service-desc">Mecanizado y soldadura TIG/MIG en acero inoxidable para sectores alimentarios, médicos e industriales.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
@@ -1320,33 +1204,33 @@
         <div class="service-card s-andamios">
           <div class="service-icon"><i class="fas fa-cubes"></i></div>
           <h3 class="service-title">Alquiler y Venta de Andamios</h3>
-          <p class="service-desc">Andamios normados para trabajos en altura, multidireccionales y acoples con estándares de seguridad garantizados.</p>
+          <p class="service-desc">Andamios normados para trabajos en altura, multidireccionales con altos estándares de seguridad.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
         <div class="service-card s-ingenieria">
           <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
           <h3 class="service-title">Ingeniería y Proyectos</h3>
-          <p class="service-desc">Asesoría técnica integral, desarrollo de planos, memorias descriptivas y supervisión de obras metalmecánicas.</p>
+          <p class="service-desc">Asesoría técnica integral, desarrollo de planos, memorias descriptivas y supervisión de obras.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
         <div class="service-card s-grua">
           <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
           <h3 class="service-title">Camión Grúa Telescópica</h3>
-          <p class="service-desc">Alquiler de camiones grúa telescópica para maniobras, izaje y traslado de cargas pesadas con máxima seguridad.</p>
+          <p class="service-desc">Alquiler de camiones grúa telescópica para maniobras, izaje y traslado de cargas pesadas.</p>
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN NOSOTROS - CON MISIÓN, VISIÓN Y NUEVO APARTADO DE POR QUÉ ELEGIRNOS -->
+  <!-- SECCIÓN NOSOTROS -->
   <section id="nosotros" class="section-padding" style="background: var(--bg-card);">
     <div class="container">
       <div class="about-main-grid">
         <div class="about-image-wrapper">
-          <img src="e5adb09d-9382-4509-b818-8d6954eb22b3.jpg" alt="Especialistas de OBH Metales SAC trabajando en taller">
+          <img src="e5adb09d-9382-4509-b818-8d6954eb22b3.jpg" alt="Especialistas de OBH Metales SAC">
           <div class="about-badge">
             <i class="fas fa-award about-badge-icon"></i>
             <div>
@@ -1360,27 +1244,27 @@
           <span class="section-subtitle">Sobre OBH Metales SAC</span>
           <h2 class="section-title">Los Mejores Especialistas en Estructuras</h2>
           <p style="color:var(--text-muted); margin-top: 15px;">
-            En <strong>OBH Metales SAC</strong> nos dedicamos a ofrecer soluciones integrales en ingeniería, fabricación y montaje de estructuras de metal. Garantizamos resistencia, durabilidad y máxima seguridad en cada una de nuestras obras.
+            En <strong>OBH Metales SAC</strong> ofrecemos soluciones integrales en ingeniería, fabricación y montaje de estructuras de metal con resistencia y máxima seguridad.
           </p>
 
           <div class="mission-vision-grid">
             <div class="mv-card">
               <h4><i class="fas fa-bullseye"></i> Nuestra Misión</h4>
-              <p>Brindar soluciones integrales en ingeniería, fabricación y montaje de estructuras metálicas, atendiendo las necesidades de nuestros clientes con eficiencia, calidad y seguridad.</p>
+              <p>Brindar soluciones integrales en ingeniería, fabricación y montaje de estructuras metálicas con eficiencia y calidad.</p>
             </div>
             <div class="mv-card">
               <h4><i class="fas fa-eye"></i> Nuestra Visión</h4>
-              <p>Ser una empresa reconocida en el sector de estructuras metálicas por la calidad de nuestros proyectos, confiabilidad y compromiso con la innovación y el crecimiento sostenible.</p>
+              <p>Ser líderes en el sector metalmecánico reconocidos por nuestra confiabilidad, innovación y compromiso sostenible.</p>
             </div>
           </div>
 
-          <a href="https://wa.me/51901538435?text=Deseo%20más%20información%20sobre%20la%20empresa" class="btn-primary" target="_blank">
+          <a href="https://wa.me/51901538435?text=Deseo%20más%20información" class="btn-primary" target="_blank">
             <i class="fas fa-comments"></i> Hablar con un Asesor
           </a>
         </div>
       </div>
 
-      <!-- NUEVO APARTADO: POR QUÉ ELEGIRNOS / LO QUE NOS DIFERENCIA -->
+      <!-- APARTADO POR QUÉ ELEGIRNOS -->
       <div class="diff-section">
         <div class="diff-header">
           <span class="section-subtitle">Ventajas Competitivas</span>
@@ -1400,7 +1284,7 @@
             <div class="diff-icon"><i class="fas fa-cogs"></i></div>
             <div class="diff-content">
               <h4>Ingeniería Especializada</h4>
-              <p>Aplicamos conocimientos técnicos y planificación para desarrollar soluciones adaptadas a las características de cada proyecto.</p>
+              <p>Aplicamos conocimientos técnicos y planificación para desarrollar soluciones adaptadas a cada proyecto.</p>
             </div>
           </div>
 
@@ -1408,7 +1292,7 @@
             <div class="diff-icon"><i class="fas fa-boxes"></i></div>
             <div class="diff-content">
               <h4>Servicio Integral</h4>
-              <p>Ofrecemos un servicio completo que comprende ingeniería, fabricación, traslado y montaje de estructuras metálicas.</p>
+              <p>Ofrecemos un servicio completo que comprende ingeniería, fabricación, traslado y montaje de estructuras.</p>
             </div>
           </div>
 
@@ -1416,7 +1300,7 @@
             <div class="diff-icon"><i class="fas fa-users-cog"></i></div>
             <div class="diff-content">
               <h4>Personal Especializado</h4>
-              <p>Contamos con profesionales y técnicos capacitados para garantizar una adecuada ejecución de cada proyecto.</p>
+              <p>Contamos con profesionales y técnicos capacitados para garantizar una adecuada ejecución de cada obra.</p>
             </div>
           </div>
 
@@ -1424,7 +1308,7 @@
             <div class="diff-icon"><i class="fas fa-shield-alt"></i></div>
             <div class="diff-content">
               <h4>Compromiso con la Seguridad y Calidad</h4>
-              <p>Priorizamos la seguridad y el control de calidad durante las diferentes etapas de nuestros proyectos.</p>
+              <p>Priorizamos la seguridad y el estricto control de calidad durante las diferentes etapas del proyecto.</p>
             </div>
           </div>
 
@@ -1442,41 +1326,41 @@
         </div>
       </div>
 
-      <!-- VALORES INSTITUCIONALES -->
+      <!-- VALORES -->
       <div style="margin-top: 70px;">
         <h3 class="values-section-title">Nuestros Valores Corporativos</h3>
         <div class="values-grid">
           <div class="value-card">
             <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
             <h5>Seguridad</h5>
-            <p>Priorizamos la seguridad de nuestro equipo, nuestros clientes y cada proyecto que desarrollamos.</p>
+            <p>Priorizamos la seguridad de nuestro personal y de cada obra desarrollada.</p>
           </div>
           <div class="value-card">
             <div class="value-icon"><i class="fas fa-medal"></i></div>
             <h5>Calidad</h5>
-            <p>Trabajamos buscando cumplir con altos estándares de calidad en cada etapa del proyecto.</p>
+            <p>Cumplimos con altos estándares en cada etapa constructiva.</p>
           </div>
           <div class="value-card">
             <div class="value-icon"><i class="fas fa-handshake"></i></div>
             <h5>Responsabilidad</h5>
-            <p>Cumplimos nuestros compromisos y asumimos con seriedad cada proyecto que desarrollamos.</p>
+            <p>Asumimos con seriedad y compromiso cada proyecto asignado.</p>
           </div>
           <div class="value-card">
             <div class="value-icon"><i class="fas fa-heart"></i></div>
             <h5>Compromiso</h5>
-            <p>Nos involucramos en cada proyecto para brindar soluciones que respondan a las necesidades de nuestros clientes.</p>
+            <p>Nos involucramos para responder exactamente a lo que el cliente requiere.</p>
           </div>
           <div class="value-card">
             <div class="value-icon"><i class="fas fa-user-tie"></i></div>
             <h5>Profesionalismo</h5>
-            <p>Contamos con una forma de trabajo rigurosa, ética y altamente capacitada para garantizar el éxito industrial.</p>
+            <p>Trabajo ético, riguroso y altamente capacitado para el éxito industrial.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALERÍA DE PROYECTOS AMPLIADA -->
+  <!-- GALERÍA DE PROYECTOS (SIN ESPACIOS VACÍOS) -->
   <section id="proyectos" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1661,43 +1545,23 @@
 
       <div class="faq-wrapper">
         <div class="faq-item">
-          <div class="faq-question">
-            ¿Realizan trabajos a nivel nacional?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            Sí, en OBH Metales SAC contamos con capacidad logística para trasladar equipos, materiales y cuadrillas de técnicos a cualquier región del país.
-          </div>
+          <div class="faq-question">¿Realizan trabajos a nivel nacional?<i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Sí, en OBH Metales SAC contamos con capacidad logística para trasladar equipos, materiales y técnicos a cualquier región del país.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question">
-            ¿Emiten factura y comprobante legal?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            Totalmente. Somos una Sociedad Anónima Cerrada (S.A.C.) debidamente registrada con RUC y emitida con todas las garantías de ley.
-          </div>
+          <div class="faq-question">¿Emiten factura y comprobante legal?<i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Totalmente. Somos una Sociedad Anónima Cerrada (S.A.C.) debidamente registrada con RUC y garantías de ley.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question">
-            ¿Cómo solicito una cotización formal?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            Puedes comunicarte al teléfono/WhatsApp <strong>901 538 435</strong> o utilizar el formulario de la página web. Si posees planos técnicos, los puedes adjuntar vía correo o WhatsApp.
-          </div>
+          <div class="faq-question">¿Cómo solicito una cotización formal?<i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Puedes comunicarte al teléfono/WhatsApp <strong>901 538 435</strong> o utilizar el formulario de la página web.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question">
-            ¿Ofrecen garantía sobre las estructuras instaladas?
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            Todas nuestras obras cuentan con garantía estructural por escrito y certificado de calidad de los materiales utilizados.
-          </div>
+          <div class="faq-question">¿Ofrecen garantía sobre las estructuras instaladas?<i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Todas nuestras obras cuentan con garantía estructural por escrito y certificado de calidad.</div>
         </div>
       </div>
     </div>
@@ -1830,10 +1694,8 @@
   </div>
 
   <script>
-    /* SCRIPT DE SEGURIDAD ANTINSPECCIÓN Y BLOQUEO DE CÓDIGO */
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
+    /* SEGURIDAD ANTINSPECCIÓN Y BLOQUEO DE CÓDIGO */
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
 
     document.addEventListener('keydown', function(e) {
       if (
@@ -1880,9 +1742,7 @@
       question.addEventListener('click', () => {
         const isOpen = item.classList.contains('active');
         faqItems.forEach(i => i.classList.remove('active'));
-        if (!isOpen) {
-          item.classList.add('active');
-        }
+        if (!isOpen) { item.classList.add('active'); }
       });
     });
 
@@ -1918,14 +1778,10 @@
       });
     });
 
-    lightboxClose.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
+    lightboxClose.addEventListener('click', () => { lightbox.classList.remove('active'); });
 
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove('active');
-      }
+      if (e.target === lightbox) { lightbox.classList.remove('active'); }
     });
 
     document.getElementById('expressQuoteForm').addEventListener('submit', function(e) {
