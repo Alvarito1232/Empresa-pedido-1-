@@ -21,7 +21,7 @@
       --cyan-accent: #00d2ff;
       --yellow-steel: #ffaa00;
       --bg-dark: #0b182e;
-      --bg-card: #14284d; /* Fondo de tarjeta más claro y visible */
+      --bg-card: #14284d;
       --text-main: #f0f4f8;
       --text-muted: #94a3b8;
       --white: #ffffff;
@@ -392,7 +392,7 @@
       font-weight: 800;
     }
 
-    /* SERVICIOS - TARJETAS NÍTIDAS Y VISIBLES CON TU IMAGEN EN LA TERCERA */
+    /* SERVICIOS */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -412,12 +412,13 @@
       box-shadow: var(--shadow);
     }
 
-    /* Estilo mejorado para la tercera tarjeta integrando la imagen y el cohete */
+    /* ESTILO MEJORADO PARA LA TERCERA TARJETA (IMAGEN CLARA Y NÍTIDA) */
     .service-card-featured {
-      background: linear-gradient(135deg, rgba(20, 40, 77, 0.95), rgba(11, 24, 46, 0.98)), url('sexooo123.jpg');
+      background: linear-gradient(135deg, rgba(10, 22, 44, 0.85), rgba(15, 38, 77, 0.92)), url('sexooo123.jpg');
       background-size: cover;
       background-position: center;
       border: 2px solid var(--cyan-accent);
+      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.25);
     }
 
     .service-card::before {
@@ -433,7 +434,7 @@
 
     .service-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0, 210, 255, 0.2);
+      box-shadow: 0 15px 35px rgba(0, 210, 255, 0.3);
       border-color: var(--cyan-accent);
     }
 
@@ -462,7 +463,7 @@
     }
 
     .service-desc {
-      color: var(--text-muted);
+      color: var(--text-main);
       font-size: 0.95rem;
       margin-bottom: 20px;
       flex-grow: 1;
@@ -935,7 +936,6 @@
     </div>
   </header>
 
-  <!-- SECCIÓN HERO -->
   <section id="inicio" class="hero">
     <div class="container hero-grid">
       <div class="hero-text-content">
@@ -1015,7 +1015,6 @@
     </div>
   </section>
 
-  <!-- SERVICIOS CON TARJETAS VISIBLES Y COHETE EN LA TERCERA -->
   <section id="servicios" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1038,7 +1037,7 @@
           <a href="#contacto" class="service-link">Consultar <i class="fas fa-chevron-right"></i></a>
         </div>
 
-        <!-- TERCERA TARJETA CON FONDO, IMAGEN 'sexooo123.jpg' Y COHETE -->
+        <!-- TERCERA TARJETA: IMAGEN CLARA 'sexooo123.jpg' Y COHETE -->
         <div class="service-card service-card-featured">
           <div class="service-icon"><i class="fas fa-rocket"></i></div>
           <h3 class="service-title">Trabajos en Inox</h3>
