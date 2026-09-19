@@ -173,7 +173,7 @@
       padding: 5px;
     }
 
-    /* HERO SECTION CON IMAGEN DE FONDO */
+    /* HERO SECTION CON NUEVA IMAGEN DE PORTADA */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -181,22 +181,11 @@
       padding-bottom: 80px;
       display: flex;
       align-items: center;
-      /* AQUÍ SE INTEGRA TU IMAGEN DE PORTADA CON UN DEGRADADO OSCURO ENCIMA PARA MEJORAR LA LECTURA */
-      background: linear-gradient(to bottom, rgba(7, 19, 41, 0.85), rgba(7, 19, 41, 0.92)), url('estructuras metalicas.jpg');
+      background: linear-gradient(135deg, rgba(7, 19, 41, 0.92) 0%, rgba(11, 24, 46, 0.88) 100%), url('potooooooooo.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       overflow: hidden;
-    }
-
-    .hero-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
     }
 
     .hero-grid {
@@ -292,8 +281,8 @@
     }
 
     .hero-card-quote {
-      background: rgba(18, 34, 63, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(18, 34, 63, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(20px);
       padding: 30px;
       border-radius: var(--radius-md);
@@ -329,7 +318,7 @@
     .form-control {
       width: 100%;
       padding: 12px 15px;
-      background: rgba(7, 19, 41, 0.7);
+      background: rgba(7, 19, 41, 0.8);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: var(--radius-sm);
       color: var(--white);
@@ -377,7 +366,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* TÍTULOS DE SECCIÓN */
+    /* TÍTULOS */
     .section-padding {
       padding: 90px 0;
     }
@@ -936,10 +925,8 @@
     </div>
   </header>
 
-  <!-- SECCIÓN HERO CON TU IMAGEN DE PORTADA -->
+  <!-- SECCIÓN HERO CON TU NUEVA IMAGEN DE FONDO -->
   <section id="inicio" class="hero">
-    <canvas id="sparksCanvas" class="hero-canvas"></canvas>
-    
     <div class="container hero-grid">
       <div class="hero-text-content">
         <div class="hero-tag">
@@ -1277,7 +1264,14 @@
             <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
             <div class="contact-details">
               <h4>Página de Facebook</h4>
-              <p>OBH METALES SAC</p>
+              <a href="https://www.facebook.com/share/1F4fZGfmGW/" target="_blank">Visitar Facebook</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-tiktok"></i></div>
+            <div class="contact-details">
+              <h4>TikTok Oficial</h4>
+              <a href="https://www.tiktok.com/@obh_metales_sac?_r=1&_t=ZS-99r1wodh5HB" target="_blank">Visitar TikTok</a>
             </div>
           </div>
           <div class="contact-item">
@@ -1288,8 +1282,8 @@
             </div>
           </div>
           <div class="social-links">
-            <a href="https://facebook.com" class="social-btn" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://tiktok.com" class="social-btn" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1F4fZGfmGW/" class="social-btn" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@obh_metales_sac?_r=1&_t=ZS-99r1wodh5HB" class="social-btn" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             <a href="https://wa.me/51901538435" class="social-btn" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
@@ -1468,59 +1462,6 @@
       const message = `*CONSULTA DESDE LA WEB*%0A%0A*Nombre:* ${encodeURIComponent(name)}%0A*Contacto:* ${encodeURIComponent(contact)}%0A*Mensaje:* ${encodeURIComponent(messageDetail)}`;
       window.open(`https://wa.me/51901538435?text=${message}`, '_blank');
     });
-
-    const canvas = document.getElementById('sparksCanvas');
-    const ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const sparks = [];
-    class Spark {
-      constructor() {
-        this.reset();
-      }
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 1.5;
-        this.speedY = -Math.random() * 2 - 0.5;
-        this.opacity = Math.random() * 0.8 + 0.2;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.opacity -= 0.008;
-        if (this.opacity <= 0 || this.y < 0) {
-          this.reset();
-        }
-      }
-      draw() {
-        ctx.fillStyle = `rgba(0, 210, 255, ${this.opacity})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    for (let i = 0; i < 40; i++) {
-      sparks.push(new Spark());
-    }
-
-    function animateSparks() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      sparks.forEach(spark => {
-        spark.update();
-        spark.draw();
-      });
-      requestAnimationFrame(animateSparks);
-    }
-    animateSparks();
   </script>
 </body>
 </html>
