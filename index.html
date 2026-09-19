@@ -6,6 +6,9 @@
   <title>OBH Metales SAC | Estructuras Metálicas e Ingeniería</title>
   <meta name="description" content="Especialistas en fabricación y montaje de estructuras metálicas, carpintería metálica, acero inoxidable, camión grúa telescópica y montacargas.">
   
+  <!-- Favicon Cohete -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 512%22><path fill=%22%2300d2ff%22 d=%22M224 32c0-17.7 14.3-32 32-32s32 14.3 32 32V64H224V32zM215.3 96H296.7C339.8 96 376 122.9 391.2 162.7L413.9 224H98.1L220.8 162.7C236 122.9 272.2 96 315.3 96h-100zM32 256H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32 96H448c17.7 0 32 14.3 32 32s-14.3 32-32 32H64c-17.7 0-32-14.3-32-32s14.3-32 32-32zM160 448H352c17.7 0 32 14.3 32 32s-14.3 32-32 32H160c-17.7 0-32-14.3-32-32s14.3-32 32-32z%22/></svg>">
+
   <!-- FontAwesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts -->
@@ -649,7 +652,7 @@
       cursor: pointer;
     }
 
-    /* FAQ Y CONTACTO CON ICONOS MODERNOS */
+    /* FAQ Y CONTACTO */
     .faq-wrapper {
       max-width: 800px;
       margin: 0 auto;
@@ -730,7 +733,6 @@
       flex-shrink: 0;
     }
 
-    /* Colores específicos para iconos de redes sociales */
     .contact-icon.whatsapp {
       background: rgba(37, 211, 102, 0.15);
       color: #25d366;
@@ -783,6 +785,59 @@
       background: var(--bright-blue);
       color: var(--white);
       transform: translateY(-3px);
+    }
+
+    /* BOTONES FLOTANTES MÚLTIPLES (WHATSAPP, TIKTOK, FACEBOOK) */
+    .floating-social-container {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      transition: var(--transition);
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .float-whatsapp {
+      background-color: #25d366;
+      width: 62px;
+      height: 62px;
+      font-size: 32px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+      animation: pulse 2s infinite;
+    }
+
+    .float-tiktok {
+      background-color: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .float-facebook {
+      background-color: #1877f2;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
     /* FOOTER */
@@ -838,37 +893,6 @@
       font-size: 0.85rem;
     }
 
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 62px;
-      height: 62px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 32px;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      animation: pulse 2s infinite;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #20ba5a;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-
     @media (max-width: 992px) {
       .hero-grid, .about-grid, .contact-grid, .footer-grid {
         grid-template-columns: 1fr;
@@ -907,12 +931,19 @@
         padding-top: 110px;
         padding-bottom: 50px;
       }
-      .whatsapp-float {
+      .floating-social-container {
         bottom: 15px;
         right: 15px;
+      }
+      .float-whatsapp {
         width: 55px;
         height: 55px;
         font-size: 28px;
+      }
+      .float-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
       }
     }
   </style>
@@ -1252,7 +1283,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN CONTACTO CON ICONOS DE WHATSAPP, TIKTOK Y FACEBOOK -->
   <section id="contacto" class="section-padding">
     <div class="container">
       <div class="section-title-wrapper">
@@ -1370,9 +1400,18 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/51901538435?text=Hola!%20Vengo%20de%20la%20página%20web%20y%20deseo%20mayor%20información." class="whatsapp-float" target="_blank" aria-label="Contacto por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <!-- BOTONES FLOTANTES MÚLTIPLES (TIKTOK, FACEBOOK Y WHATSAPP) -->
+  <div class="floating-social-container">
+    <a href="https://www.tiktok.com/@obh_metales_sac?_r=1&_t=ZS-99r1wodh5HB" class="float-btn float-tiktok" target="_blank" aria-label="TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://www.facebook.com/share/1F4fZGfmGW/" class="float-btn float-facebook" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://wa.me/51901538435?text=Hola!%20Vengo%20de%20la%20página%20web%20y%20deseo%20mayor%20información." class="float-btn float-whatsapp" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
 
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
